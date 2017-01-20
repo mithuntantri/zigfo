@@ -1,0 +1,78 @@
+<div class="register-container">
+  <div class="register-box">
+    <div style="font-size:26px;color:#535766;text-align:center;font-weight:300;line-height:37px;margin-top:15px;margin-bottom:32px;">Signup with</div>
+    <div style="font-size:12px;color:#535766;text-align:center;font-weight:300;line-height:14px;margin-bottom:20px;">EASILY USING</div>
+    <div style="width:100%;margin-top:10px;margin-bottom:40px;height:50px;">
+      <div class="register-button" ng-click="fbLogin()"><span class="register-fb-logo"></span>FACEBOOK</div>
+      <div class="register-button" g-login><span class="register-google-logo"></span>GOOGLE</div>
+    </div>
+    <div style="font-size:12px;color:#535766;text-align:center;font-weight:300;line-height:14px;margin-bottom:20px;">- OR USING EMAIL/MOBILENO -</div>
+    <form class="register-form" name="registerform" id="registerform">
+      <fieldset class="register-input-container">
+        <div class="register-input-item" ng-show="!SignupService.otp_generated && !SignupService.GoogleSignup">
+          <input type="email" class="register-user-input register-user-input-email" ng-pattern="emailFormat"
+          placeholder="Your Email Address" name="email" autocomplete="off" autofocus ng-model="email" required/>
+        </div>
+        <div class="register-input-item" ng-show="!SignupService.otp_generated && SignupService.GoogleSignup">
+          <input type="email" class="register-user-input register-user-input-email"  ng-pattern="emailFormat"
+          placeholder="Your Email Address" name="email" autocomplete="off" autofocus ng-model="SignupService.GoogleEmail" disabled="true"/>
+        </div>
+        <div class="register-input-item" ng-show="!SignupService.otp_generated" style="height:46px;">
+          <input type="text" class="register-user-input register-user-input-password"
+          placeholder="First Name" name="firstname" autocomplete="off" ng-model="firstname" required style="width:48%;float:left;"/>
+          <input type="text" class="register-user-input register-user-input-password"
+          placeholder="Last Name" name="lastname" autocomplete="off" ng-model="lastname" required style="width:40%;float:left;"/>
+        </div>
+        <div class="register-input-item" ng-show="!SignupService.otp_generated">
+          <input type="password" class="register-user-input register-user-input-password" ng-minlength="8"
+          placeholder="Choose Password" name="password" autocomplete="off" ng-model="password" required/>
+        </div>
+        <div class="register-input-item" ng-show="!SignupService.otp_generated">
+          <input type="text" class="register-user-input register-user-input-password"
+          placeholder="Referral ID (Optional)" name="referral_code" autocomplete="off" ng-model="referral_code"/>
+        </div>
+        <div class="register-input-item">
+          <input type="number" min="1000000000" max="9999999999" class="register-user-input register-user-input-mobileno"
+          placeholder="Mobile Number (For OTP Verification)" name="mobileno" autocomplete="off" required ng-model="mobileno"/>
+        </div>
+        <div class="register-input-item" ng-show="SignupService.otp_generated" style="border-left-bottom-radius:5px;border-right-bottom-radius:5px;">
+          <input type="number" min="0" max="999999" class="register-user-input register-user-input-mobileno"
+          placeholder="OTP (Sent to the Mobile Number)" name="otp" autocomplete="off" ng-model="otp"/>
+        </div>
+        <fieldset class="register-gender" ng-show="!SignupService.otp_generated">
+          <legend class="register-gender-title">I'm a</legend>
+          <input type="radio" class="register-gender-radio" id="male" value="M" name="gender" ng-model="gender" ng-click="changeGender()"/>
+          <label class="register-gender-label" for="male">Male</label>
+          <input type="radio" class="register-gender-radio" id="female" value="F" name="gender" ng-model="gender" ng-click="changeGender()"/>
+          <label class="register-gender-label" for="female">Female</label>
+        </fieldset>
+      </fieldset>
+      <div class="register-link-container" style="padding:0px 20px;"
+        ng-if="registerform.$error.email || registerform.firstname.$error.required || registerform.lastname.$error.required || registerform.password.$error.minlength || registerform.mobileno.$error.min || registerform.mobileno.$error.max">
+        <div class="register-link" style="text-align:left;color:rgb(241, 55, 81) !important;">
+          <span class="register-alert-text" ng-if="registerform.$error.email">Invalid Email ID</span>
+          <span class="register-alert-text" ng-if="registerform.firstname.$error.required || registerform.lastname.$error.required"><br/>FirstName & LastName cannot be empty</span>
+          <span class="register-alert-text" ng-if="registerform.password.$error.minlength"><br/>Password must contain atleast 8 characters</span>
+          <span class="register-alert-text" ng-if="registerform.mobileno.$error.min || registerform.mobileno.$error.max"><br/>Invalid Mobile Number</span>
+        </div>
+      </div>
+      <div class="register-link-container" ng-if="SignupService.ErrorField">
+        <div class="register-link" style="text-align:left;color:rgb(241, 55, 81);">
+          <span class="register-alert-text">{{SignupService.ErrorField}}</span>
+        </div>
+      </div>
+      <fieldset class="register-button-container" ng-show="!SignupService.otp_generated">
+        <button class="register-button-new" ng-click="secureSignup()" ng-disabled="registerform.$invalid">REGISTER</button>
+      </fieldset>
+      <fieldset class="register-button-container" ng-show="SignupService.otp_generated">
+        <button class="register-button-new" ng-click="verifyOtp()" ng-disabled="registerform.$invalid">VERIFY OTP</button>
+      </fieldset>
+      <div class="register-link-container">
+        <div class="register-link">
+          <span class="register-info-text">Already have an account?</span>
+          <a class="register-create-account-link register-link" ui-sref="main.login">Login!</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

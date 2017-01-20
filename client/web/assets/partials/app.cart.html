@@ -1,0 +1,79 @@
+<div class="center-container">
+  <div style="width:25%;float:left;height:100%;">
+    <div class="my-account-header">
+      My Shopping Bag
+    </div>
+    <div class="my-account-username">
+      3 items
+    </div>
+  </div>
+  <div class="new-breadcrumbs-container">
+    <ul class="new-breadcrumbs">
+      <li class="first-step" ng-click="changeDesignTabs(true, false, false, false)" ng-class="{'active':styles_active}">BAG</li>
+      <li class="middle-divider">------</li>
+      <li class="second-step" ng-click="changeDesignTabs(false, true, false, false)" ng-class="{'active':fabrics_active}">PICKUP</li>
+      <li class="middle-divider">------</li>
+      <li class="third-step" ng-click="changeDesignTabs(false, false, true, false)" ng-class="{'active':measurements_active}">DELIVERY</li>
+      <li class="middle-divider">------</li>
+      <li class="fourth-step" ng-click="changeDesignTabs(false, false, false, true)" ng-class="{'active':checkout_active}">PAYMENT</li>
+    </ul>
+  </div>
+  <div class="new-sidebuttons">
+    <div class="secure-label">
+      <div style="float:left;padding:0 5px;"><i class="material-icons" style="font-size:17px; ">lock</i></div>
+      <div style="float:left;">100% SECURE</div>
+    </div>
+  </div>
+  <div class="bagContainer">
+    <div class="shoppingbag-left"></div>
+    <div class="shoppingbag-right">
+      <div class="order-total-summary">
+        <div class="coupon-section">Coupons<span class="zig-header-label" style="color:#526cd0;font-size:10px;">ZIG100</span></div>
+        <div class="gift-wrap-order">
+          <div style="width:100%;height:100%;">
+            <div style="font-size:12px;font-weight:600;line-height:16px;">
+              Use Zigfo Credits
+              <span style="font-size:10px;font-weight:300;line-height:16px;margin-left:5px;">(Only 20% can be used per order)</span>
+            </div>
+            <div style="width:100%;color:#20bd99;">
+              <div style="font-size:14px;font-weight:400;line-height:25px;float:left;width:73%;text-align:left;">Rs. 300</div>
+              <div style="line-height:12px;float:left;text-align:right;;">
+                <md-checkbox ng-checked="true">
+                </md-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-summary-span">
+          <div class="order-summary-list">
+            <div class="order-summary-label">Bag Total</div>
+            <div class="order-summary-value">Rs. 699</div>
+          </div>
+          <div class="order-summary-list">
+            <div class="order-summary-label">Credits Applied</div>
+            <div class="order-summary-value" style="color:#ee5f73;">- Rs. 60</div>
+          </div>
+          <div class="order-summary-list">
+            <div class="order-summary-label">Estimated VAT/CST</div>
+            <div class="order-summary-value">Rs. 29</div>
+          </div>
+          <div class="order-summary-list">
+            <div class="order-summary-label">Coupon Discount</div>
+            <div class="order-summary-value" style="color:#526cd0;font-size:10px;">No Coupon Applied</div>
+          </div>
+          <div class="order-summary-list">
+            <div class="order-summary-label">Delivery / Pickup</div>
+            <div class="order-summary-value" style="color:#20bd99;">FREE</div>
+          </div>
+        </div>
+        <div class="order-summary-list">
+          <div class="order-summary-label" style="font-weight:600 !important;height:40px;line-height:40px;font-size:16px;">Order Total</div>
+          <div class="order-summary-value" style="font-weight:600 !important;height:40px;line-height:40px;font-size:16px;">Rs. 678</div>
+        </div>
+        <div class="place-order-btn">
+          Place Order
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

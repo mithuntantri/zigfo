@@ -1,0 +1,91 @@
+.fabfit-container{
+  max-width:1600px;
+  margin:0;
+  width:100%;
+  min-height: 100px;
+}
+.box-shadows, .box-line {
+    z-index: 3;
+}
+.box-shadows {
+    height: 100px;
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    background: #fff;
+}
+.box-shadows, .box-line {
+    z-index: 3;
+}
+.box-line {
+    border-bottom: 1px solid #e5e5e5;
+    height: 41px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
+.header-wrapper {
+    min-height: 100px;
+}
+.row1-header{
+  border-bottom: 1px solid #e5e5e5;
+  height:41px;
+  padding: 0 15px;
+}
+.row2-header{
+  border-bottom: 1px solid #e5e5e5;
+  height:59px;
+  padding: 0 15px;
+}
+.offer-tab1{
+  width:50%;
+  float:left;
+  text-align: left;
+  text-transform: uppercase;
+  line-height:41px;
+  font-size:11px;
+}
+.rightlink-tab2{
+  width:50%;
+  float: right;
+  text-align: right;
+  padding: 0 0px;
+  height: 41px;
+  line-height: 41px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.header-top{
+  width:100%;
+  padding-top:9px;
+  font-size:11px;
+  height: 17px;
+  line-height: 17px;
+}
+.header-list{
+  list-style: none;
+  margin: 0;
+  float:right;
+}
+.header-list li{
+  float:left;
+  margin: 0 7px;
+  cursor: pointer;
+}
+.main-header .download-app-icon {
+    background-position: -259px -5px;
+    height: 20px;
+    line-height: 20px;
+    width: 9px;
+    float: left;
+    font-size: 20px;
+  }
+.rightlink-tab2 i{
+  margin: 0 7px;
+}
+.rightlink-tab2 span {
+    margin: 0 7px;
+}

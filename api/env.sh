@@ -1,0 +1,6 @@
+export PSQL_DB_USER="postgres"
+export PSQL_PASS="postgres"
+export PSQL_DB_NAME="zigfo"
+export RETHINK_DB_NAME="zigfo"
+export CMS_PORT=":3333"
+export OTPS_PORT=":2222"

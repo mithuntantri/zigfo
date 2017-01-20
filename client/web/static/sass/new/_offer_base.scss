@@ -1,0 +1,53 @@
+.zig-shop-base{
+  width: 100%;
+  height: auto;
+}
+.offer-base-container{
+  max-width: 980px;
+  margin: 0 auto;
+  height: 140px;
+}
+.offer-base-item{
+  width: 25%;
+  min-width: 240px;
+  height: 100%;
+  float: left;
+  padding: 20px 0;
+}
+.offer-base-img{
+  width:90px;
+  height:90px;
+  float: left;
+  cursor: pointer;
+  padding: 0px 0;
+  overflow: hidden;
+  padding: 15px;
+}
+.offer-base-label{
+  width: 140px;
+  height: 80px;
+  float: left;
+  padding-left: 20px;
+}
+.offer-base-header{
+  font-size: 11px;
+  color: #7e818c;
+  line-height: 15px;
+  cursor: pointer;
+}
+.offer-base-desc{
+  font-size: 12px;
+  font-weight: 600;
+  color: #7e818c;
+  padding: 12px 0;
+  cursor: pointer;
+}
+.offer-base-link{
+  font-size: 11px;
+  color: #7e818c;
+  line-height: 15px;
+  cursor: pointer;
+}
+.offer-base-link:hover{
+  text-decoration: underline;
+}

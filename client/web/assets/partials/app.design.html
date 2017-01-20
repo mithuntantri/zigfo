@@ -1,0 +1,270 @@
+<div class="center-container">
+  <div style="width:25%;float:left;height:100%;">
+    <div class="my-account-header">
+      Custom Shirt Design
+    </div>
+    <div class="my-account-username">
+      Men's Formal
+    </div>
+  </div>
+  <div class="new-breadcrumbs-container">
+    <ul class="new-breadcrumbs">
+      <li class="first-step" ng-click="changeDesignTabs(true, false, false, false)" ng-class="{'active':styles_active}">DESIGN</li>
+      <li class="middle-divider">------</li>
+      <li class="second-step" ng-click="changeDesignTabs(false, true, false, false)" ng-class="{'active':fabrics_active}">FABRIC</li>
+      <li class="middle-divider">------</li>
+      <li class="third-step" ng-click="changeDesignTabs(false, false, true, false)" ng-class="{'active':measurements_active}">BAG</li>
+      <li class="middle-divider">------</li>
+      <li class="fourth-step" ng-click="changeDesignTabs(false, false, false, true)" ng-class="{'active':checkout_active}">PAYMENT</li>
+    </ul>
+  </div>
+  <div class="new-sidebuttons">
+    <div class="secure-label">
+      <div style="float:left;padding:0 5px;"><i class="material-icons" style="font-size:17px; ">lock</i></div>
+      <div style="float:left;">100% SECURE</div>
+    </div>
+  </div>
+  <div class="my-account-sidebar">
+    <div class="sidebar-options">
+      <ul class="sidebar-option">
+        <div class="overview">
+          <div class="sidebar-header">GENDER</div>
+          <li class="sidebar-option"
+            ng-class="{'active': TabsService.myaccount_tabs.info}"
+            ng-click="TabsService.myaccountTabs(false, false, false, false, false, true, false, false, false, false, false)">
+            Male
+          </li>
+          <li class="sidebar-option"
+            ng-class="{'active': TabsService.myaccount_tabs.cards}"
+            ng-click="TabsService.myaccountTabs(false, false, false, false, false, false, true, false, false, false, false)">
+            Female
+          </li>
+        </div>
+        <div class="account">
+          <div class="sidebar-header">OPTIONS</div>
+          <li class="sidebar-option" ng-repeat="options in DesignService.allOptions"
+            ng-class="{'active':options.active}" ng-click="changeStylesTab($index)">
+            {{options.name}}
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="my-account-content" ng-show="measurements_active">
+    <div style="width:400px;margin:0 auto;height:100px;">
+      <div style="width:100px;height:100px;float:left;padding-top:15px;">
+        <img src="/img/delivery.png" style="width:100%;"/>
+      </div>
+      <div style="width:300px;height:100px;float:left;padding:25px;">
+        <div style="font-size:20px;line-height:30px;text-align:center;">Personal Pilot at the</div>
+        <div style="font-size:20px;line-height:30px;text-align:center;">Comfort of your Home</div>
+      </div>
+    </div>
+    <div style="width:615px;margin:0 auto;height:33px;font-size:12px;line-height:33px;margin-bottom:20px;">
+      Fabric Pickup | Certified Pilot Measurement Pickup | No Convenience Fee | Book online or call us at 99998 99998
+    </div>
+    <div class="search-locality-container search-location">
+      <div style="float:left;width:70px;text-align:center;height:36px;">
+        <i class="material-icons" style="line-height:36px;">location_searching</i>
+      </div>
+      <div style="float:left;width:360px;text-align:center;">
+        <input type="text" gm-places-autocomplete ng-model="autocomplete" placeholder="Search Nearby Location (Locality, Area or Road)" class="location-search-input"/>
+      </div>
+      <div style="float:left;width:70px;text-align:center;padding:2px;">
+        <div class="location-search-button" ng-click="ModalService.OpenAppointmentsModal();generateMaps();">
+          GO
+        </div>
+      </div>
+    </div>
+    <div style="width:50%;height:33px;border-bottom:1px solid #f1f1f1;margin:0 auto;">
+      <div style="margin:0 auto;width:40px;line-height:65px;background-color:#fff;text-align:center;">OR</div>
+    </div>
+  </div>
+  <div class="my-account-content" ng-show="styles_active">
+    <div class="content-card">
+      <div class="top-design-img">
+        <div class="visual-product">
+          <div style="width:100%;height:330px;">
+          </div>
+          <div style="width:100%;height:50px;">
+            <div class="visual-price">
+              <div style="width:65px;float:left;font-weight:400;font-size:12px;">Total Price </div>
+              <div style="width:100px;float:left;text-align:right;font-weight:400;color:#f7931d;font-size:17px;">Rs.{{DesignService.totalPrice}}</div>
+              <div style="width:100%;text-align:right;font-size:12px;line-height:25px;">Prices Inclusive of all taxes</div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-bottom-btn">
+          <div ng-click="changeDesignTabs(false, true, false, false)"
+            class="proceed-next-btn">
+            PROCEED NEXT
+          </div>
+          <div style="width:200px;float:left;height:33px;line-height:33px;cursor:pointer;" ng-mouseover="faviconhover = true" ng-mouseleave="faviconhover = false">
+            <div style="float:left;line-height:43px;font-size:17px;padding:0 10px;color:#e42c42;" ng-if="faviconhover"><i class="material-icons">favorite</i></div>
+            <div style="float:left;line-height:43px;font-size:17px;padding:0 10px;" ng-if="!faviconhover"><i class="material-icons">favorite_border</i></div>
+            <div style="float:left;line-height:33px;">SAVE FOR LATER</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-subcategories">
+        <div ng-if="DesignService.allOptions && ready" style="width:100%;height:100%;">
+          <div class="left-carousel" ng-click="carouselPrev()">
+            <i class="material-icons left-carousel-icon">chevron_left</i>
+          </div>
+          <div class="right-carousel" ng-click="carouselNext()">
+            <i class="material-icons right-carousel-icon">chevron_right</i>
+          </div>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[0].options" arrows="true" ng-if="current_active_option == 0" >
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[0].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[1].options" arrows="true" ng-if="current_active_option == 1">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[1].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="6" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[2].options" arrows="true" ng-if="current_active_option == 2">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[2].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="5" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[3].options" arrows="true" ng-if="current_active_option == 3">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[3].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="4" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[4].options" arrows="true" ng-if="current_active_option == 4">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[4].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[5].options" arrows="true" ng-if="current_active_option == 5">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[5].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[6].options" arrows="true" ng-if="current_active_option == 6">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[6].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="2" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[7].options" arrows="true" ng-if="current_active_option == 7">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[7].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="4" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[8].options" arrows="true" ng-if="current_active_option == 8">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[8].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-app-design-app-design" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="DesignService.allOptions[9].options" arrows="true" ng-if="current_active_option == 9">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in DesignService.allOptions[9].options">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui small modal appointments">
+  <div style="width:100%;height:120px;background-color:#2874f0;">
+    <!-- <div style="width:70%;height:80%;padding:25px 15px;float:left;">
+      <div style="font-size:22px;color:#fff;line-height:50px;font-weight:400;">
+        Book Appoinment
+      </div>
+      <div style="font-size:15px;color:#fff;line-height:23px;font-weight:400;">
+        Personal Pilot at the comfort of your Home
+      </div>
+      <div style="padding:50px 10px;font-size:12px;color:#fff;font-weight:400;line-height:18px;">
+        Fabric Pick-Up | Home Measurement Pick-Up | Book online or Call us at 99998 99998
+      </div>
+    </div> -->
+    <div style="width:100%;height:100%;float:left;padding:0 100px;">
+      <md-button class="md-raised" ng-click="gotoAppointments()" style="top:60px;z-index:1;float:left;margin-right:10px;">
+        <div style="float:left;width:30px;text-align:center;height:36px;">
+          <i class="material-icons" style="line-height:36px;font-size:17px;">face</i>
+        </div>
+        <div style="float:left;min-width:120px;text-align:center;font-size:12px;">
+          SCHEDULE FOR NOW
+        </div>
+      </md-button>
+      <md-button class="md-raised" ng-click="gotoAppointments()" style="top:60px;z-index:1;float:left;margin-left:10px;">
+        <div style="float:left;width:30px;text-align:center;height:36px;">
+          <i class="material-icons" style="line-height:36px;font-size:17px;">send</i>
+        </div>
+        <div style="float:left;min-width:120px;text-align:center;font-size:12px;">
+          SCHEDULE FOR LATER
+        </div>
+      </md-button>
+    </div>
+  </div>
+  <div style="width:100%;height:400px;float:left;" ng-hide="appointments_page">
+    <md-button class="md-raised" ng-click="autocompleteMaps()" style="bottom:0;z-index:1;left:0px;position:absolute;">
+      <div style="float:left;width:30px;text-align:center;height:36px;">
+        <i class="material-icons" style="line-height:36px;font-size:17px;">location_searching</i>
+      </div>
+      <div style="float:left;width:120px;text-align:center;font-size:12px;">
+        CURRENT LOCATION
+      </div>
+    </md-button>
+    <ui-gmap-google-map center="center" zoom="zoom" control="control" ng-if="generatedMaps">
+      <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+            </ui-gmap-marker>
+      </ui-gmap-google-map>
+  </div>
+  <div style="width:100%;height:400px;" ng-show="appointments_page">
+    <div style="width:100%;height:33px;">
+      Pick your Date
+    </div>
+    <div style="width:100%;height:100px;">
+      <ul class="appointments-lists day">
+        <li class="appointments-list" ng-repeat="slot in AppointmentsService.slots">
+          {{slot.dayofweek}}
+        </li>
+      </ul>
+      <ul class="appointments-lists date" ng-click="AppointmentsService.current_date_selection = $index">
+        <li class="appointments-list" ng-repeat="slot in AppointmentsService.slots">
+          {{slot.dateofmonth}}
+        </li>
+      </ul>
+    </div>
+    <div style="width:100%;height:33px;">
+      Pick your Slot
+    </div>
+    <div style="width:100%;height:100px;">
+      <ul class="appointments-lists slot">
+        <li class="appointments-list slots" ng-repeat="slot in AppointmentsService.slots[AppointmentsService.current_date_selection].slots">
+          {{slot.num_slots}}
+        </li>
+      </ul>
+      <ul class="appointments-lists slotname">
+        <li class="appointments-list slotsname" ng-repeat="slot in AppointmentsService.slots[AppointmentsService.current_date_selection].slots">
+          {{slot.slot_name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

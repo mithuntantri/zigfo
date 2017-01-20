@@ -1,0 +1,313 @@
+<div class="zig-desktop-container">
+  <div class="zig-header-container">
+    <div class="zig-header-links">Download App</div>
+    <div class="zig-header-divider">|</div>
+    <div class="zig-header-links">Offers<span class="zig-header-label">New</span></div>
+    <div class="zig-header-divider">|</div>
+    <div class="zig-header-links">Contact Us</div>
+    <div class="zig-header-divider">|</div>
+    <div class="zig-header-links">India's Leading Online Tailor</div>
+  </div>
+  <div class="zig-nav-container">
+    <div class="zig-nav-logo" style="padding:15px 0;cursor:pointer;" ui-sref="app.home">
+      <img src="/img/zigfo_logo.png" style="width:35px;float:left;"/>
+      <div style="float:left;font-size:20px;font-weight:600;width:70px;color: #282c3f;line-height:35px;padding-left:10px;letter-spacing:1px;">Zigfo</div>
+    </div>
+    <div class="zig-nav-menu">
+      <div class="zig-nav-menuitems">
+        <div class="zig-nav-menuitem1">
+          Men
+          <div class="zig-nav-list1">
+            <div style="max-width:980px;margin:0 auto;font-weight:400;">
+              <div style="width:100%">
+                <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Men's Fashion</div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label" ui-sref="main.design">Custom Shirts</span>
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Suits</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom 3Piece Suits</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Vests</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="zig-nav-menuitem2">
+          Women
+          <div class="zig-nav-list2">
+            <div style="max-width:980px;margin:0 auto;font-weight:400;">
+              <div style="width:100%">
+                <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Women's Fashion</div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Shirts</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Suits</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom 3Piece Suits</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Vests</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="zig-nav-menuitem3" ui-sref="main.fabrics">
+          Fabrics
+          <div class="zig-nav-list3">
+            <div style="max-width:980px;margin:0 auto;font-weight:400;">
+              <div style="width:30%;float:left;font-size:12px;">
+                <div style="width:100%">
+                  <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Fabric Brands</div>
+                </div>
+                <div class="zig-nav-list-item" ng-repeat="brand in FabricsService.filters.brand">
+                  <span class="zig-nav-list-item-label">{{brand.name}}</span>
+                </div>
+              </div>
+              <div style="width:70%;float:left;font-size:12px;">
+                <div style="width:100%">
+                  <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Trending Fabrics</div>
+                </div>
+                <div class="zig-nav-list-item" ng-repeat="fabric in FabricsService.topFabrics" style="float:left;margin:0 12px;">
+                  <!-- <span class="zig-nav-list-item-label">{{ fabric.brand }}</span> -->
+                  <img src="{{fabric.img1}}" style="width:75px;height:75px;"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zig-nav-search">
+      <input type="text" class="zig-query" placeholder="Search"/>
+      <a class="zig-query-submit">
+        <i class="material-icons">search</i>
+      </a>
+    </div>
+    <div class="zig-nav-actions">
+      <div class="zig-action-user">
+        <div style="float:left;">
+          <i class="material-icons">face</i>
+        </div>
+        <div style="float:left;">
+          <i class="material-icons">arrow_drop_down</i>
+        </div>
+        <div class="zig-userActions">
+          <div class="zig-userActions-arrow"></div>
+          <div class="zig-user-content">
+            <div class="zig-userActions-section1">
+              <div class="zig-userActions-email" ng-click="gotoProfile()">{{ ProfileService.profile.email_id}}</div>
+              <div class="zig-userActions-mobile" ng-click="gotoProfile()">{{ ProfileService.profile.mobileno }}</div>
+            </div>
+            <div class="zig-userActions-section2">
+              <div class="zig-userActions-item" ng-click="gotoOrders()">My Orders</div>
+              <div class="zig-userActions-item">Favorites</div>
+              <div class="zig-userActions-item" ng-click="gotoCredits()">
+                ZIGFO Credits
+                <span class="zig-header-label">{{ ProfileService.credits | getTotalCredits }}</span>
+              </div>
+            </div>
+            <div class="zig-userActions-section3">
+              <div class="zig-userActions-item" ng-click="gotoMeasurements()">Saved Measurements</div>
+              <div class="zig-userActions-item" ng-click="gotoSavedCards()">Saved Cards</div>
+              <div class="zig-userActions-item" ng-click="gotoSavedAddress()">Saved Addresses</div>
+            </div>
+            <div class="zig-userActions-section4">
+              <div class="zig-userActions-item" ng-click="gotoEditProfile()">Edit Profile</div>
+              <div class="zig-userActions-item" ng-click="logOut()">Logout</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="zig-action-cart" ui-sref="app.cart">
+        <div style="float:left;">
+          <i class="material-icons">shopping_basket</i>
+        </div>
+        <div style="float:left;line-height:30px;padding:0 5px;font-weight:600;">Bag</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="width:100%;display:block;" class="ui-view-container">
+  <div ui-view></div>
+</div>
+<div style="width:100%;display:inline-block;">
+  <div style="width:100%;height:330px;border-bottom:1px solid #e2e2e2;padding:50px 0;background-color:#fff;max-width:980px;margin:0 auto;margin-top:20px;">
+    <div style="width:15%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">POLICY INFO</div>
+      <ul style="font-size:12px;color:#a4a3a3;">
+        <li>Privacy Policy</li>
+        <li>Terms of Sale</li>
+        <li>Terms of Use</li>
+        <li>T&C</li>
+        <li>Return Policy</li>
+      </ul>
+    </div>
+    <div style="width:15%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">USEFUL LINKS</div>
+      <ul style="font-size:12px;color:#a4a3a3;">
+        <li>FAQs</li>
+        <li>Shipping</li>
+        <li>Contact Us</li>
+        <li>Cancellation</li>
+        <li>Track Orders</li>
+      </ul>
+    </div>
+    <div style="width:40%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">EXPERIENCE ZIGFO APP ON MOBILE</div>
+      <div style="width:100%;height:85px;padding:15px;">
+        <i class="downloadApp1Icon footerIcon"></i>
+        <!-- <i class="downloadApp2Icon footerIcon"></i> -->
+        <i class="downloadApp3Icon footerIcon"></i>
+      </div>
+      <div style="width:40%;height:100px;float:left;text-align:center;">
+        <i class="originalityIcon footerIcon"></i>
+      </div>
+      <div style="width:60%;height:100px;float:left;padding:20px 0;">
+        <div style="font-size:18px;line-height:35px;">Fast, Simple & Delightful</div>
+        <div style="color:#a4a3a3;">All it takes is 30 seconds to Download</div>
+      </div>
+    </div>
+    <div style="width:30%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;padding-bottom:10px;">ABOUT ZIGFO</div>
+      <div style="font-size:11px;color:#a4a3a3;">
+        Our shirts are made with the single most essential ingredient ever, which is love. With this comes the finest quality of shirting and top workmanship from our tailors as well as heartfelt services from our teams. Our shirts are made with the most exclusive collars and cuffs with thick and soft finishes and exclusively edged seams. We are able to produce any style of collar, cuff, front placket, back, pocket, bottom styles possible. The list is endless! Monograms/Initials are possible anywhere on the shirt, depending on your choice. Marvel at our range of 100 % cotton fabrics, made of the highest thread counts and weaves. There is so much to choose from!
+      </div>
+    </div>
+  </div>
+  <div style="width:100%;height:128px;padding:25px 8%;background-color:#fff;border-bottom:1px solid #e2e2e2;max-width:980px;margin:0 auto;">
+    <div style="width:50%;height:100%;float:left;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">PAYMENT</div>
+      <div style="width:100%;height:60px;line-height:60px;">
+        <i class="visaPayment footerIcon"></i>
+        <i class="mastercardPayment footerIcon"></i>
+        <i class="cashondelivery footerIcon"></i>
+        <i class="netbanking footerIcon"></i>
+      </div>
+    </div>
+    <div style="width:50%;height:100%;float:left;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">CONNECT</div>
+      <div style="width:100%;height:60px;line-height:60px;">
+        <i class="facebook footerIcon"></i>
+        <i class="twitter footerIcon"></i>
+        <i class="google footerIcon"></i>
+        <i class="youtube footerIcon"></i>
+        <i class="instagram footerIcon"></i>
+        <i class="pintereset footerIcon"></i>
+      </div>
+    </div>
+  </div>
+  <div style="width:100%;height:40px;line-height:40px;padding:0 8%;max-width:980px;margin:0 auto;">
+    <div style="width:50%;font-size:12px;float:left;text-align:left;">
+      Have Issues? Contact Us
+    </div>
+    <div style="width:50%;font-size:11px;float:left;text-align:right;">
+      Copyright © 2016, Raee Creations Private Limited. All Rights Reserved
+    </div>
+  </div>
+</div>
+
+<div class="ui small modal measurements">
+  <div style="width:40%;height:100%;float:left;background-color:#2874f0;">
+    <div style="width:100%;height:80%;padding:25px 15px;">
+      <div style="font-size:22px;color:#fff;line-height:50px;font-weight:400;">
+        Measurements
+      </div>
+      <div style="font-size:15px;color:#fff;line-height:23px;font-weight:400;">
+        Create your Measurements profile, Easy checkout Orders at one click, Edit Current and Add new profiles
+      </div>
+      <div style="padding:50px 10px;font-size:12px;color:#fff;font-weight:400;line-height:18px;">
+        {{MeasurementsService.current_tip}}
+      </div>
+    </div>
+    <div style="width:100%;height:20%;overflow:hidden;">
+      <img src="/img/measurement.png"/>
+    </div>
+  </div>
+  <div style="width:60%;height:100%;float:left;padding:50px;">
+    <div style="height:55px;width:100%;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:100%;padding:0 20px;float:left;height:55px;">
+        <label class="custom-label">Profile Name</label>
+        <input ng-model="MeasurementsService.measurements.name" type="text" style="margin:0;" ng-focus="MeasurementsService.changeTips(0)">
+      </md-input-container>
+    </div>
+    <div style="height:40px;width:100%;margin-bottom:30px;">
+      <div style="width:30%;padding:0 20px;line-height:40px;float:left;">
+        Units
+      </div>
+      <div style="width:70%;padding:0 20px;line-height:40px;float:left;">
+        <div style="width:33px;line-height:40px;float:left;cursor:pointer;" ng-click="MeasurementsService.changeUnits(true, false)">
+          <i class="material-icons" style="font-size:20px;line-height:42px;" ng-if="MeasurementsService.measurements.cms">radio_button_checked</i>
+          <i class="material-icons" style="font-size:20px;line-height:42px;" ng-if="!MeasurementsService.measurements.cms">radio_button_unchecked</i>
+        </div>
+        <div style="width:40px;line-height:40px;float:left;">Cm</div>
+        <div style="width:33px;line-height:40px;float:left;cursor:pointer;" ng-click="MeasurementsService.changeUnits(false, true)">
+          <i class="material-icons" style="font-size:20px;line-height:42px;" ng-if="MeasurementsService.measurements.inches">radio_button_checked</i>
+          <i class="material-icons" style="font-size:20px;line-height:42px;" ng-if="!MeasurementsService.measurements.inches">radio_button_unchecked</i>
+        </div>
+        <div style="width:40px;line-height:40px;float:left;">Inch</div>
+      </div>
+    </div>
+    <div style="height:80px;width:100%;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;padding:0 20px;float:left;">
+        <label class="custom-label">Neck</label>
+        <input ng-model="MeasurementsService.measurements.neck" type="number" step="1" ng-focus="MeasurementsService.changeTips(1)">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;padding:0 20px;float:left;">
+        <label class="custom-label">Chest</label>
+        <input ng-model="MeasurementsService.measurements.chest" type="number" step="1" ng-focus="MeasurementsService.changeTips(2)">
+      </md-input-container>
+    </div>
+    <div style="height:80px;width:100%;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;padding:0 20px;float:left;">
+        <label class="custom-label">Waist</label>
+        <input ng-model="MeasurementsService.measurements.waist" type="number" step="1" ng-focus="MeasurementsService.changeTips(3)">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;padding:0 20px;float:left;">
+        <label class="custom-label">Hip</label>
+        <input ng-model="MeasurementsService.measurements.hip" type="number" step="1" ng-focus="MeasurementsService.changeTips(4)">
+      </md-input-container>
+    </div>
+    <div style="height:80px;width:100%;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;padding:0 20px;float:left;">
+        <label class="custom-label">Length</label>
+        <input ng-model="MeasurementsService.measurements.length" type="number" step="1" ng-focus="MeasurementsService.changeTips(5)">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;padding:0 20px;float:left;">
+        <label class="custom-label">Shoulder</label>
+        <input ng-model="MeasurementsService.measurements.shoulder" type="number" step="1" ng-focus="MeasurementsService.changeTips(6)">
+      </md-input-container>
+    </div>
+    <div style="height:80px;width:100%;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;padding:0 20px;float:left;">
+        <label class="custom-label">Sleeve</label>
+        <input ng-model="MeasurementsService.measurements.sleeve" type="number" step="1" ng-focus="MeasurementsService.changeTips(7)">
+      </md-input-container>
+      <div class="submit-btn" ng-click="MeasurementsService.updateMeasurements()" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);">
+        SUBMIT
+      </div>
+    </div>
+  </div>
+</div>

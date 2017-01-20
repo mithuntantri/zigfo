@@ -1,0 +1,168 @@
+.product-card{
+  width:232px;
+  float: left;
+  padding: 16px;
+}
+.product-img{
+  width: 100%;
+  cursor: pointer;
+}
+.product-desc{
+  width:100%;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.product-card:hover{
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+.gold{
+  color: #FFC315;
+}
+.breadcrumbs-separator {
+    color: #696e79 !important;
+    margin: 0 5px !important;
+    padding-top: 5px !important;
+    font-weight: 500 !important;
+}
+.breadcrumbs-link {
+    color: #696e79 !important;
+    text-transform: capitalize !important;
+    display: inline-block !important;
+    padding-top: 10px !important;
+    text-decoration: none !important;
+    padding-bottom: 1px !important;
+    border-bottom: 1px solid transparent !important;
+    font-weight: 500 !important;
+}
+.breadcrumbs-link:hover {
+    border-bottom: 1px solid #d5d6d9 !important;
+}
+.breadcrumbs-bold-link {
+    font-weight: 600 !important;
+}
+
+.breadcrumbs-bold-separator {
+    font-weight: 600 !important;
+}
+.fabric-details{
+  width:100%;
+  min-height:200px;
+}
+.pdp-price-info{
+  height:74px;
+  padding-bottom:10px;
+  margin-bottom:20px;
+  border-bottom: 1px dotted #d5d6d9;
+  font-weight: 600;
+}
+.pdp-title {
+    color: #696e79;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.pdp-selling-price {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.old-price{
+  text-decoration: line-through;
+  color: #ccc;
+  font-weight: 500;
+  font-size: 14px;
+}
+.new-price{
+  padding: 0 5px;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+.pdp-button {
+    border-radius: 3px;
+    outline: 0;
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 13px;
+    min-height: 22px;
+}
+.pdp-add-to-wishlist {
+    padding: 10px 15px;
+    font-weight: 500;
+    background-color: #fff;
+    border: 1px solid #20bd99;
+    color: #20bd99;
+    margin-right: 20px;
+}
+.pdp-add-to-wishlist:hover {
+    background-color: #f5f5f6;
+}
+.pdp-add-to-bag {
+    padding: 10px 15px;
+    min-width: 108px;
+    font-weight: 500;
+    background-color: #20bd99;
+    border: 1px solid #20bd99;
+    color: #fff;
+}
+.pdp-size-chart-description {
+    color: #94989f;
+    font-size: 13px;
+    margin-top: 35px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #d5d6d9;
+}
+.size-buttons-size-button-selected {
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 10px !important;
+    background-color: #282c3f !important;
+}
+.size-buttons-size-button-default {
+    background-color: #fff;
+    border: 1px solid #282c3f;
+    border-radius: 50px;
+    padding: 0;
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #282c3f;
+}
+.size-buttons-size-button {
+    font-weight: 500;
+}
+.size-buttons-big-size {
+    padding: 0 5px;
+}
+.pdp-style-note {
+    color: #696e79;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+.pincode-button {
+    outline: 0;
+    margin-top: 10px;
+    font-size: 13px;
+    padding: 10px 0;
+    font-weight: 600;
+    background-color: #fff;
+    border: 0;
+    color: #526cd0;
+    text-transform: capitalize;
+}
+.meta-container {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.meta-info {
+    color: #94989f;
+    font-size: 13px;
+    margin: 5px 0;
+}

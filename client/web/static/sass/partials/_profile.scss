@@ -1,0 +1,212 @@
+$underline-tab-color: #434343;
+$light-border-color1: #ddd;
+$light-inactive-color: #b2b2b2;
+$light-border-color2: #e5e5e5;
+$profile-lbl-color: #6e6e6e;
+$profile-desc-color: #434343;
+$yellow-contrast : #f7931d;
+
+*:focus{
+  outline: none !important;
+}
+.my-account-container{
+  width:100%;
+  height:100%;
+}
+.underline-tabs-container{
+  padding: 0 12%;
+  height:52px;
+  border-bottom: 1px solid $light-border-color1;
+}
+ul.underline-tabs{
+  width:100%;
+  margin: 0;
+  list-style: none;
+}
+li.underline-tab{
+  min-width:100px;
+  float: left;
+  margin: 0 5%;
+  height:100%;
+  color: $underline-tab-color;
+  border-bottom: 2px solid transparent;
+  line-height: 52px;
+  color: $light-inactive-color;
+  cursor: pointer;
+}
+li.underline-tab.active,
+li.underline-tab:hover{
+  color: $underline-tab-color;
+  border-bottom: 2px solid $underline-tab-color;
+}
+.my-account-info{
+  width:100%;
+  height:500px;
+  padding:0 8%;
+}
+.account-info-main{
+  width: 100%;
+  height:52px;
+  margin-top: 2px;
+}
+.account-info-header{
+  width: 50%;
+  float:left;
+  height:52px;
+  line-height: 52px;
+  color: $underline-tab-color;
+  font-weight: 400;
+  text-align: left;
+  padding: 0 20px;
+}
+.account-info-btn{
+  width:50%;
+  float:left;
+  height:52px;
+  line-height: 52px;
+  padding: 10px 20px;
+}
+.account-info-content{
+  width:100%;
+  height:420px;
+  border: 1px solid $light-border-color2;
+  padding: 25px;
+}
+ul.profile-left-label{
+  width:10%;
+  max-width: 100px;
+  float:left;
+}
+ul.profile-right-desc{
+  width: 90%;
+  float: left;
+}
+li.profile-label{
+  height:42px;
+  line-height: 42px;
+  color: $profile-lbl-color;
+  padding: 0 10px;
+}
+li.profile-desc{
+  height:42px;
+  line-height: 42px;
+  color: $profile-desc-color;
+}
+
+.editinfo-btn{
+  width: 113px;
+  color: $underline-tab-color;
+  border: 2px solid $underline-tab-color;
+  height:36px;
+  text-align: center;
+  line-height: 34px;
+  cursor: pointer;
+  float: right;
+  font-size: 13px;
+  background-color: #fff;
+}
+.submit-btn{
+  @extend .editinfo-btn;
+  float: left;
+  margin: 0 10px;
+  background-color: $yellow-contrast;
+  border: 2px solid $yellow-contrast;
+  color: #fff;
+}
+.submit-btn:hover{
+  @extend .editinfo-btn;
+  float: left !important;
+  margin: 0 10px !important;
+  background-color: $yellow-contrast !important;
+  border: 2px solid $yellow-contrast !important;
+  color: #fff !important;
+}
+.cancel-btn{
+  @extend .editinfo-btn;
+  float: left;
+  margin: 0 10px;
+}
+.editinfo-btn:hover{
+  background-color: $underline-tab-color;
+  color: #fff;
+}
+.cancel-btn:hover{
+  @extend .editinfo-btn;
+  float: left;
+  margin: 0 10px;
+}
+.input-field-container{
+  height:75px;
+  padding: 5px 0;
+  width:100%;
+}
+// input:not([type]), input[type=text], input[type=textbox],
+// input[type=password], input[type=email], input[type=url],
+// input[type=time], input[type=date], input[type=datetime],
+// input[type=datetime-local], input[type=tel], input[type=number],
+// input[type=search], textarea.materialize-textarea{
+.custom-input{
+  border: none !important;
+  box-shadow: none !important;
+  height: 50px !important;
+  margin-bottom: 0px !important;
+  padding: 0 10px !important;
+}
+.custom-label{
+  padding: 0 22px !important;
+}
+.custom-input-field{
+  padding:0 !important;
+  width:45% !important;
+  min-width:100px !important;
+  float:left !important;
+  border: 1px solid $light-border-color2 !important;
+  margin: 0 5% !important;
+  height:52px !important;
+  margin: 0 10px !important;
+}
+.right-option,
+.left-option{
+  width:133px;
+  float:left;
+}
+
+.four-column-container{
+  padding: 50px 0;
+  height:200px;
+  width:100%;
+}
+.total-credits,
+.profile-credits,
+.referral-credits,
+.gift-credits{
+  width:24%;
+  text-align: left;
+  float: left;
+  margin: 0 0.5%;
+  padding: 7px 15px;
+  border-right: 1px solid $light-border-color2;
+}
+.gift-credits{
+  border: none !important;
+}
+.credits-value{
+  height: 50px;
+  line-height: 50px;
+  font-size:30px;
+}
+.credits-desc{
+  height: 30px;
+  line-height: 20px;
+  font-size: 14px;
+}
+.credits-desc2{
+  width:100%;
+  padding:10px 0;
+  font-size: 12px;
+  line-height: 23px;
+}
+a{
+  color: #3a99d9 !important;
+  cursor: pointer;
+}

@@ -1,0 +1,79 @@
+<div style="width:100%;">
+  <img src="img/profile_banner.jpg" style="width:100%;height:100%;"/>
+</div>
+<div style="width:100%;height:50px;padding-top:19px;border-bottom:1px solid #ccc;">
+  <div style="width:765px;height:100%;margin:0 auto;">
+    <div class="sliding-middle-out" ng-click="modalTab('login')" ng-class="{'active': login_active}" style="width:150px;">
+      PERSONAL INFO
+    </div>
+    <div class="sliding-middle-out" ng-click="modalTab('signup')" ng-class="{'active': signup_active}" style="width:150px;">
+      SAVED CARDS
+    </div>
+    <div class="sliding-middle-out" ng-click="modalTab('signup')" ng-class="{'active': signup_active}" style="width:150px;">
+      SAVED ADDRESS
+    </div>
+    <div class="sliding-middle-out" ng-click="modalTab('signup')" ng-class="{'active': signup_active}" style="width:150px;">
+      BANK DETAILS
+    </div>
+    <div class="sliding-middle-out" ng-click="modalTab('signup')" ng-class="{'active': signup_active}" style="width:150px;">
+      SUBSCRIPTIONS
+    </div>
+  </div>
+</div>
+<div style="width:100%;height:300px;">
+  <div style="width:50%;height:100%;float:left;padding:10px 25px;">
+    <div style="height:80px;width:100%;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;float:left;" ng-disabled>
+        <label>Mobile Number</label>
+        <input ng-model="mobileno">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;float:left;">
+        <label>Email ID</label>
+        <input ng-model="email_id">
+      </md-input-container>
+    </div>
+    <div style="width:100%;height:60px;line-height:30px;">
+      <input type="radio" name="group1" id="male" ng-model="gender.male" value="male" ng-click="setGender(true, false)" class="radio-btn"/>
+      <label for="male" class="radio-label">Male</label>
+      <input type="radio" name="group1" id="female" ng-model="gender.female" value="female" ng-click="setGender(false, true)" class="radio-btn"/>
+      <label for="female" class="radio-label">Female</label>
+    </div>
+    <div style="width:100%;height:80px;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;float:left;">
+        <label>First Name</label>
+        <input ng-model="first_name">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;float:left;">
+        <label>Last Name</label>
+        <input ng-model="last_name">
+      </md-input-container>
+    </div>
+  </div>
+  <div style="width:50%;height:100%;float:left;">
+    <md-input-container class="md-block" flex-gt-sm style="margin:0;">
+      <label>Address</label>
+      <input ng-model="address">
+    </md-input-container>
+    <md-input-container class="md-block" flex-gt-sm style="margin:0;">
+      <label>Street</label>
+      <input ng-model="street">
+    </md-input-container>
+    <div style="width:100%;height:80px;">
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;float:left;">
+        <label>Pin Code</label>
+        <input ng-model="pin_code">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm style="margin:0;width:50%;float:left;">
+        <label>City</label>
+        <input ng-model="city">
+      </md-input-container>
+    </div>
+  </div>
+  <div style="width:120px;float:right;">
+    <md-button class="md-raised md-primary" style="margin:0 auto;width:100%;background-color:#dd4b39;"
+    ng-click="setProfile()">
+    <i class="fa fa-lock"></i>
+    <span style="padding:0 7px">Save Profile</span>
+    </md-button>
+  </div>
+</div>

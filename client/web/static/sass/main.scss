@@ -1,0 +1,23 @@
+@import "components";
+html,body{
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 300 !important;
+  background-color: #fff !important;
+}
+input[type="reset"][disabled], input[type="submit"][disabled], html input[type="button"][disabled], button[disabled]{
+  background-color: #ccc !important;
+ }
+.angular-google-map-container { height: 400px; }
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,218 @@
+<div class="zig-desktop-container">
+  <div class="zig-header-container">
+    <div class="zig-header-links">Download App</div>
+    <div class="zig-header-divider">|</div>
+    <div class="zig-header-links">Offers<span class="zig-header-label">New</span></div>
+    <div class="zig-header-divider">|</div>
+    <div class="zig-header-links">Contact Us</div>
+    <div class="zig-header-divider">|</div>
+    <div class="zig-header-links">India's Leading Online Tailor</div>
+  </div>
+  <div class="zig-nav-container">
+    <div class="zig-nav-logo" style="padding:20px 0;cursor:pointer;" ui-sref="main.home">
+      <img src="/img/zigfo_logo.png" style="width:35px;float:left;"/>
+      <div style="float:left;font-size:20px;font-weight:600;width:70px;color: #282c3f;line-height:35px;padding-left:10px;letter-spacing:1px;">Zigfo</div>
+    </div>
+    <div class="zig-nav-menu">
+      <div class="zig-nav-menuitems">
+        <div class="zig-nav-menuitem1">
+          Men
+          <div class="zig-nav-list1">
+            <div style="max-width:980px;margin:0 auto;font-weight:400;">
+              <div style="width:100%">
+                <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Men's Fashion</div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label" ui-sref="main.design">Custom Shirts</span>
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Suits</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom 3Piece Suits</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Vests</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="zig-nav-menuitem2">
+          Women
+          <div class="zig-nav-list2">
+            <div style="max-width:980px;margin:0 auto;font-weight:400;">
+              <div style="width:100%">
+                <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Women's Fashion</div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item" ui-sref="main.blouses">
+                  <span class="zig-nav-list-item-label">Custom Blouse</span>
+                  <!-- <span class="zig-header-label coming-soon">Coming Soon</span> -->
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Shirts</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+              <div style="width:30%;float:left;font-size:12px;">
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom 3Piece Suits</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+                <div class="zig-nav-list-item">
+                  <span class="zig-nav-list-item-label">Custom Vests</span>
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="zig-nav-menuitem3" ui-sref="main.fabrics">
+          Fabrics
+          <div class="zig-nav-list3">
+            <div style="max-width:980px;margin:0 auto;font-weight:400;">
+              <div style="width:30%;float:left;font-size:12px;">
+                <div style="width:100%">
+                  <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Fabric Brands</div>
+                </div>
+                <div class="zig-nav-list-item" ng-repeat="brand in FabricsService.filters.brand">
+                  <span class="zig-nav-list-item-label">{{brand.name}}</span>
+                </div>
+              </div>
+              <div style="width:70%;float:left;font-size:12px;">
+                <div style="width:100%">
+                  <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Trending Fabrics</div>
+                </div>
+                <div class="zig-nav-list-item" ng-repeat="fabric in FabricsService.topFabrics" style="float:left;margin:0 12px;">
+                  <!-- <span class="zig-nav-list-item-label">{{ fabric.brand }}</span> -->
+                  <img src="{{fabric.img1}}" style="width:75px;height:75px;"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zig-nav-search">
+      <input type="text" class="zig-query" placeholder="Search" ng-click="SearchService.search()"/>
+      <a class="zig-query-submit">
+        <i class="material-icons">search</i>
+      </a>
+    </div>
+    <div class="zig-nav-actions">
+      <div class="zig-action-user">
+        <div style="float:left;">
+          <i class="material-icons">face</i>
+        </div>
+        <div style="float:left;">
+          <i class="material-icons">arrow_drop_down</i>
+        </div>
+        <div class="zig-userActions">
+          <div class="zig-userActions-arrow"></div>
+          <div class="zig-userActions-content">
+            <div style="font-weight:600;font-size:14px;color:#282c3f;line-height:33px;">Your Account</div>
+            <div style="font-weight:400;font-size:12px;color:#282c3f;line-height:27px;">Access Account and manage orders</div>
+            <div style="width:100%;padding:7px;">
+              <div class="zig-user-btn" ui-sref="main.signup">SIGNUP</div>
+              <div class="zig-user-btn" ui-sref="main.login">LOGIN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="zig-action-cart">
+        <div style="float:left;">
+          <i class="material-icons">shopping_basket</i>
+        </div>
+        <div style="float:left;line-height:30px;padding:0 5px;font-weight:600;" ui-sref="main.cart">
+          Bag
+          <span class="desktop-badge desktop-melon" ng-show="CartService.item_count > 0">{{CartService.item_count}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="width:100%;display:block;" class="ui-view-container">
+  <div ui-view></div>
+</div>
+<div style="width:100%;display:inline-block;">
+  <div style="width:100%;height:330px;border-bottom:1px solid #e2e2e2;padding:50px 0;background-color:#fff;max-width:980px;margin:0 auto;margin-top:20px;">
+    <div style="width:15%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">POLICY INFO</div>
+      <ul style="font-size:12px;color:#a4a3a3;">
+        <li>Privacy Policy</li>
+        <li>Terms of Sale</li>
+        <li>Terms of Use</li>
+        <li>T&C</li>
+        <li>Return Policy</li>
+      </ul>
+    </div>
+    <div style="width:15%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">USEFUL LINKS</div>
+      <ul style="font-size:12px;color:#a4a3a3;">
+        <li>FAQs</li>
+        <li>Shipping</li>
+        <li>Contact Us</li>
+        <li>Cancellation</li>
+        <li>Track Orders</li>
+      </ul>
+    </div>
+    <div style="width:40%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">EXPERIENCE ZIGFO APP ON MOBILE</div>
+      <div style="width:100%;height:85px;padding:15px;">
+        <i class="downloadApp1Icon footerIcon"></i>
+        <!-- <i class="downloadApp2Icon footerIcon"></i> -->
+        <i class="downloadApp3Icon footerIcon"></i>
+      </div>
+      <div style="width:40%;height:100px;float:left;text-align:center;">
+        <i class="originalityIcon footerIcon"></i>
+      </div>
+      <div style="width:60%;height:100px;float:left;padding:20px 0;">
+        <div style="font-size:18px;line-height:35px;">Fast, Simple & Delightful</div>
+        <div style="color:#a4a3a3;">All it takes is 30 seconds to Download</div>
+      </div>
+    </div>
+    <div style="width:30%;float:left;height:100%;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;padding-bottom:10px;">ABOUT ZIGFO</div>
+      <div style="font-size:11px;color:#a4a3a3;">
+        Our shirts are made with the single most essential ingredient ever, which is love. With this comes the finest quality of shirting and top workmanship from our tailors as well as heartfelt services from our teams. Our shirts are made with the most exclusive collars and cuffs with thick and soft finishes and exclusively edged seams. We are able to produce any style of collar, cuff, front placket, back, pocket, bottom styles possible. The list is endless! Monograms/Initials are possible anywhere on the shirt, depending on your choice. Marvel at our range of 100 % cotton fabrics, made of the highest thread counts and weaves. There is so much to choose from!
+      </div>
+    </div>
+  </div>
+  <div style="width:100%;height:128px;padding:25px 8%;background-color:#fff;border-bottom:1px solid #e2e2e2;max-width:980px;margin:0 auto;">
+    <div style="width:50%;height:100%;float:left;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">PAYMENT</div>
+      <div style="width:100%;height:60px;line-height:60px;">
+        <i class="visaPayment footerIcon"></i>
+        <i class="mastercardPayment footerIcon"></i>
+        <i class="cashondelivery footerIcon"></i>
+        <i class="netbanking footerIcon"></i>
+      </div>
+    </div>
+    <div style="width:50%;height:100%;float:left;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">CONNECT</div>
+      <div style="width:100%;height:60px;line-height:60px;">
+        <i class="facebook footerIcon"></i>
+        <i class="twitter footerIcon"></i>
+        <i class="google footerIcon"></i>
+        <i class="youtube footerIcon"></i>
+        <i class="instagram footerIcon"></i>
+        <i class="pintereset footerIcon"></i>
+      </div>
+    </div>
+  </div>
+  <div style="width:100%;height:40px;line-height:40px;padding:0 8%;max-width:980px;margin:0 auto;">
+    <div style="width:50%;font-size:12px;float:left;text-align:left;">
+      Have Issues? Contact Us
+    </div>
+    <div style="width:50%;font-size:11px;float:left;text-align:right;">
+      Copyright © 2016, Raee Creations Private Limited. All Rights Reserved
+    </div>
+  </div>
+</div>
