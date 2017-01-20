@@ -76,39 +76,47 @@ Follow the following Commands
 
 Install Rethinkdb by adding the [Rethinkdb Repository](http://download.rethinkdb.com/apt) to your list of repositories and install via apt-get
 
-`source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+```
+source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
 
 wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
 
 sudo apt-get update
 
-sudo apt-get install rethinkdb`
+sudo apt-get install rethinkdb
+```
 
-Get the build dependencies
+**Get the build dependencies**
 
-`sudo apt-get install build-essential protobuf-compiler python \
+```
+sudo apt-get install build-essential protobuf-compiler python \
 
                      libprotobuf-dev libcurl4-openssl-dev \
                      
                      libboost-all-dev libncurses5-dev \
                      
-                     libjemalloc-dev wget m4`
+                     libjemalloc-dev wget m4
+```
 
-Get the source
+**Get the source**
 
-`wget https://download.rethinkdb.com/dist/rethinkdb-2.3.5.tgz
+```
+wget https://download.rethinkdb.com/dist/rethinkdb-2.3.5.tgz
 
-tar xf rethinkdb-2.3.5.tgz`
+tar xf rethinkdb-2.3.5.tgz
+```
 
-Build the server
+**Build the server**
 
-`cd rethinkdb-2.3.5
+```
+cd rethinkdb-2.3.5
 
 ./configure --allow-fetch
 
 make
 
-sudo make install`
+sudo make install
+```
 
 #### Starting the server
 
