@@ -1,4 +1,5 @@
-angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 'slick', 'gm', 'uiGmapgoogle-maps', 'directive.g+signin', 'socialLogin'])
+angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 'slick', 'gm',
+'uiGmapgoogle-maps', 'directive.g+signin', 'socialLogin'])
 .run(['$rootScope', '$state', '$stateParams', '$timeout', "TabsService", '$window',
     function($rootScope, $state, $stateParams, $timeout, TabsService, $window) {
     (function(){

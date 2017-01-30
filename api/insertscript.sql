@@ -47,63 +47,65 @@ INSERT INTO options (option_key, option_name, option_code, price) VALUES ('201',
 INSERT INTO options (option_key, option_name, option_code, price) VALUES ('202', 'Roll-Up Sleeve', 'roll_up_sleeve', 0);
 INSERT INTO options (option_key, option_name, option_code, price) VALUES ('203', 'Short Sleeve', 'short_sleeve', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('301', 'Business Classic', 'business_classic', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('302', 'Business Superior', 'business_superior', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('303', 'Button-Down Classic', 'button_down_classic', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('304', 'Button-Down Modern', 'button_down_modern', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('305', 'Club', 'club', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('306', 'Club Modern', 'club_modern', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('307', 'Cut-Away Classic', 'cut_away_classic', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('308', 'Cut-Away Casual', 'cut_away_casual', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('309', 'Cut-Away Extreme', 'cut_away_extreme', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('310', 'Cut-Away Modern', 'cut_away_modern', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('311', 'Cut-Away Superior', 'cut_away_superior', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('312', 'Cut-Away Two-Button', 'cut_away_twobutton', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('313', 'Turndown Superior', 'turndown_superior', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('314', 'Tab', 'tab', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('315', 'Wing Collar', 'wing_collar', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('316', 'Mao', 'mao', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('317', 'Pin', 'pin', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('301', 'Italian 1 Button', 'italian_1button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('302', 'Italian 2 Button', 'italian_2button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('303', 'French 1 Button', 'french_1button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('304', 'French 2 Button', 'french_2button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('305', 'Cut-Away 1 Button', 'cut_away_1button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('306', 'Cut-Away 2 Button', 'cut_away_2button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('307', 'Round Collar', 'round_collar', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('308', 'Bottom Down', 'bottom_down', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('309', 'Hidden Button', 'hidden_button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('310', 'Tab', 'tab', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('311', 'Batman Collar', 'batman_collar', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('312', 'Modern Collar', 'modern_collar', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('313', 'Tuxedo', 'tuxedo', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('314', 'Band', 'band', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('401', 'Single Button Rounded', 'single_button_rounded', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('402', 'Single Button Beveled', 'single_button_beveled', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('403', 'Single Button Straight', 'single_button_straight', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('404', 'Convertible Rounded', 'convertible_rounded', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('405', 'Double Button Rounded', 'double_button_rounded', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('406', 'Double Button Beveled', 'double_button_beveled', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('407', 'French Cuff', 'french_cuff', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('408', 'Link Cuff', 'link_cuff', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('409', 'Narrow', 'narrow', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('410', 'Casual Single Button', 'casual_single_button', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('401', 'Single Button Round', 'single_button_round', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('402', 'Single Button Angle', 'single_button_angle', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('403', 'Single Button Square', 'single_button_square', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('404', 'Double Button Round', 'double_button_round', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('405', 'Double Button Angle', 'double_button_angle', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('406', 'Double Button Square', 'double_button_square', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('407', 'French Round', 'french_round', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('408', 'French Angle', 'french_angle', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('409', 'French Square', 'french_square', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('501', 'With Placket', 'with_placket', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('502', 'Without Placket', 'without_placket', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('501', 'Single Placket', 'single_placket', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('502', 'Box Placket', 'box_placket', 0);
 INSERT INTO options (option_key, option_name, option_code, price) VALUES ('503', 'Hidden Buttons', 'hidden_buttons', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('504', 'Narrow Placket', 'narrrow_placket', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('505', 'Tuxedo Placket', 'tuxedo_placket', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('506', 'White Tie Placket for Studs', 'white_tie_placket_for_studs', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('507', 'White Tie Placket', 'white_tie_placket', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('601', 'No Pocket', 'no_pocket', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('602', 'Left', 'left', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('603', 'Both', 'both', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('601', 'No', 'no_seams', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('602', 'Yes', 'seams', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('701', 'Straight', 'straight', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('702', 'Skewed', 'skewed', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('703', 'V-Shaped', 'v_shaped', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('701', 'No Pocket', 'no_pocket', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('702', 'Classic Round', 'classic_round', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('704', 'Classic Angle', 'classic_angle', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('705', 'Diamond Straight', 'diamond_straight', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('706', 'Classic Square', 'classic_square', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('707', 'Round Flap', 'round_flap', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('708', 'Angle Flap', 'angle_flap', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('709', 'Diamond Flap', 'diamond_flap', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('710', 'Round with glass', 'round_with_glass', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('801', 'No', 'no', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('802', 'Yes', 'yes', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('801', 'Left', 'left', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('802', 'Both', 'both', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('901', 'No Back Details', 'no_back_details', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('902', 'Center Folds', 'center_folds', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('903', 'Side Folds', 'side_folds', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('904', 'Back Darts', 'back_darts', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('901', 'Plain', 'plain', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('902', 'Box Pleat', 'box_pleat', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('903', 'Side Pleats', 'side_pleats', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('904', 'Centre Pleats', 'center_pleats', 0);
 
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1001', 'No', 'no_darts', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1002', 'Yes', 'darts', 0);
 
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1001', 'Classic', 'classic', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1002', 'Modern', 'modern', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1003', 'Straight', 'straight', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1101', 'Tri Tab', 'tri_tab', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1102', 'Straight', 'straight', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1103', 'Straight Vents', 'straight_vents', 0);
+
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1201', 'No', 'no_epualettes', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('1202', 'Yes', 'epualettes', 0);
 
 INSERT INTO blouse (option_key, option_name, option_category, option_type, img, price, disable_list)  VALUES ('101', 'U Neck', 'Neck Type', 'all', 'blouses/101.jpg', 0, '');
 INSERT INTO blouse (option_key, option_name, option_category, option_type, img, price, disable_list)  VALUES ('102', 'V Neck', 'Neck Type', 'all', 'blouses/102.jpg', 0, '');

@@ -2,6 +2,7 @@ package main
 
 import (
   "strconv"
+  "fmt"
   "github.com/gin-gonic/gin"
 )
 type Options struct{
@@ -58,18 +59,20 @@ type initData struct{
   Data []Set `json:"all_options"`
 }
 func makeOptionsList() ([]string,[]int){
-  var optionsCount []int = []int{3, 3, 17, 10, 7, 3, 3, 2, 4, 3}
+  var optionsCount []int = []int{3, 3, 14, 9, 3, 2, 10, 2, 4, 2, 3, 2}
   var optionsList []string = []string{
     "Fit",
     "Sleeve",
     "Collar",
     "Cuff",
     "Placket",
-    "Pocket",
-    "Pocket Type",
-    "Pocket Lid",
+    "Seams",
+    "Pockets",
+    "Pocket Side",
     "Back Details",
+    "Darts",
     "Bottom Cut",
+    "Epualettes",
   }
   return optionsList, optionsCount
 }
@@ -87,13 +90,14 @@ func initProductHandler(c *gin.Context)  {
     initdata.CheckedOut = false
     initdata.Gender = "M"
     initdata.Data = make([]Set, 0)
-    for i:=0;i<=9;i++{
+    for i:=0;i<=11;i++{
       common_set.Key = strconv.Itoa(i+1)
       common_set.Name = optionsList[i]
       common_set.Options = make([]Options, 0)
       var optionsCount = optionsCount[i]
       for j:=1; j<=optionsCount; j++{
         var option Options
+        fmt.Println("fetching", i+1, j)
         option = fetchOptions(i + 1, j)
         common_set.Options = append(common_set.Options, option)
       }
