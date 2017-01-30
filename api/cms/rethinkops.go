@@ -49,11 +49,13 @@ type newDesignHash struct{
   Collar string `gorethink:"collar"`
   Cuff string `gorethink:"cuff"`
   Placket string `gorethink:"placket"`
-  PocketPlacement string `gorethink:"pocket_placement"`
-  PocketType string `gorethink:"pocket_type"`
-  PocketLid string `gorethink:"pocket_lid"`
+  Seams string `gorethink:"seams"`
+  Pockets string `gorethink:"pockets"`
+  PocketSide string `gorethink:"pocket_side"`
   BackDetails string `gorethink:"back_details"`
+  Darts string `gorethink:"darts"`
   BottomCut string `gorethink:"bottom_cut"`
+  Epualettes string `gorethink:"epualettes"`
   TotalPrice float64 `gorethink:"total_price"`
   Mobileno string `gorethink:"mobileno"`
   VerifiedUser bool `gorethink:"verified_user"`
@@ -416,11 +418,13 @@ func insertNewHash(hash, mobileno string)  bool{
     Collar: "301",
     Cuff: "401",
     Placket:"501",
-    PocketPlacement:"601",
-    PocketType:"701",
-    PocketLid:"801",
+    Seams: "601",
+    Pockets:"701",
+    PocketSide:"801",
     BackDetails:"901",
-    BottomCut: "1001",
+    Darts: "1001",
+    BottomCut: "1101",
+    Epualettes: "1201",
     TotalPrice: 699.00,
     VerifiedUser : VerifiedUser,
     Mobileno : mobileno,
@@ -635,19 +639,25 @@ func getDesignHash(hash string, choice , options_count int) (bool,bool){
         case 5: if designTemp.Placket == key{
                   selected = true
                 }
-        case 6: if designTemp.PocketPlacement == key{
+        case 6: if designTemp.Seams == key{
                   selected = true
                 }
-        case 7: if designTemp.PocketType == key{
+        case 7: if designTemp.Pockets == key{
                   selected = true
                 }
-        case 8: if designTemp.PocketLid == key{
+        case 8: if designTemp.PocketSide == key{
                   selected = true
                 }
         case 9: if designTemp.BackDetails == key{
                   selected = true
                 }
-        case 10: if designTemp.BottomCut == key{
+        case 10: if designTemp.Darts == key{
+                  selected = true
+                }
+        case 11: if designTemp.BottomCut == key{
+                  selected = true
+                }
+        case 12: if designTemp.Epualettes == key{
                   selected = true
                 }
   }
@@ -688,21 +698,10 @@ func updateBlouseHashTable(hash , option_name, option_category, option_type stri
   return true
 }
 func updateHashTable(hash string, choice, option_key int)  {
-  var designTemp = newDesignHash{
-    Hash : hash,
-    CheckedOut: false,
-    Fit: "101",
-    Sleeve: "201",
-    Collar: "301",
-    Cuff: "401",
-    Placket:"501",
-    PocketPlacement:"601",
-    PocketType:"701",
-    PocketLid: "801",
-    BackDetails:"901",
-    BottomCut: "1001",
-    TotalPrice: 700.00,
-    }
+  var designTemp newDesignHash
+  curr, _ := r.DB("mithun").Table("designHash").Get(hash).Run(session)
+  curr.One(&designTemp)
+  curr.Close()
   var key string
   if(option_key >= 10){
     key = strconv.Itoa(choice) + strconv.Itoa(option_key)
@@ -715,11 +714,13 @@ func updateHashTable(hash string, choice, option_key int)  {
     case 3 : designTemp.Collar = key
     case 4 : designTemp.Cuff = key
     case 5 : designTemp.Placket = key
-    case 6 : designTemp.PocketPlacement = key
-    case 7 : designTemp.PocketType = key
-    case 8 : designTemp.PocketLid = key
+    case 6 : designTemp.Seams = key
+    case 7 : designTemp.Pockets = key
+    case 8 : designTemp.PocketSide = key
     case 9 : designTemp.BackDetails = key
-    case 10 : designTemp.BottomCut = key
+    case 10: designTemp.Darts = key
+    case 11: designTemp.BottomCut = key
+    case 12: designTemp.Epualettes = key
   }
   fmt.Println(designTemp.Hash, designTemp.Fit)
   r.DB("mithun").Table("designHash").Get(hash).Update(designTemp).Exec(session)

@@ -59,7 +59,7 @@ type initData struct{
   Data []Set `json:"all_options"`
 }
 func makeOptionsList() ([]string,[]int){
-  var optionsCount []int = []int{3, 3, 14, 9, 3, 2, 10, 2, 4, 2, 3, 2}
+  var optionsCount []int = []int{3, 3, 14, 9, 3, 2, 9, 2, 4, 2, 3, 2}
   var optionsList []string = []string{
     "Fit",
     "Sleeve",

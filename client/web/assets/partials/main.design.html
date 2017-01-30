@@ -107,7 +107,7 @@
         <div class="account">
           <div class="sidebar-header">OPTIONS</div>
           <li class="sidebar-option" ng-repeat="options in DesignService.allOptions"
-            ng-if="$index != 5 && $index != 7 && $index !== 9"
+            ng-if="$index != 5 && $index != 7 && $index !== 9 && $index !== 11"
             ng-class="{'active':options.active}" ng-click="changeStylesTab($index)">
             {{options.name}}
           </li>
@@ -205,60 +205,101 @@
     <div class="content-card">
       <div class="top-design-img" style="background-color:#fafafa;">
         <div class="visual-product">
-          <div style="width:100%;height:330px;">
-            <div style="position:absolute;">
-              <img src="/img/customshirts/men/closed/200.png" ng-if="!DesignService.allOptions[1].options[2].selected"
-              class="final-image" style="z-index:10;">
-              <img src="/img/customshirts/men/closed/button.png" class="final-image" style="z-index:10;">
-              <img ng-src="/img/customshirts/men/closed/{{option.key}}.png" ng-if="option.selected" class="final-image"
-                ng-repeat="option in DesignService.allOptions[1].options" style="z-index:10;">
+          <div style="width:100%;height:330px;padding:20px 10px;">
+              <div style="position:relative;width:100%;;height:290px;float:left;text-align:center;
+              box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);">
+              <div style="width:30%;float:left;height:100%;overflow: hidden;background-size: cover;
+              background: url('/img/customshirts/bg-menuL.jpg') no-repeat;background-size:cover;">
+
+              </div>
+              <div style="width:40%;float:left;height:100%;background: rgba(40, 23, 13, 0.62);">
+                <!-- Epualettes -->
+                <img ng-src="/img/customshirts/men/closed/1202_R.png"
+                ng-if="DesignService.allOptions[11].options[1].selected"
+                class="final-image" style="z-index:10;top:-67px;">
+                <img ng-src="/img/customshirts/men/closed/1202_L.png"
+                ng-if="DesignService.allOptions[11].options[1].selected"
+                class="final-image" style="z-index:10;top:-67px;">
+                <!-- Left Pockets Option -->
+                <img ng-src="/img/customshirts/men/closed/{{option.key}}.png"
+                ng-repeat="option in DesignService.allOptions[6].options"
+                ng-if="option.selected && option.key != 701"
+                class="final-image" style="z-index:11;">
+                <!-- Right Pockets Option -->
+                <img ng-src="/img/customshirts/men/closed/{{option.key}}_R.png"
+                ng-repeat="option in DesignService.allOptions[6].options"
+                ng-if="DesignService.allOptions[7].options[1].selected && option.selected && option.key != 701"
+                class="final-image" style="z-index:11;">
+                <!-- Right Sleeve -->
+                <img src="/img/customshirts/men/closed/200.png" ng-if="!DesignService.allOptions[1].options[2].selected"
+                class="final-image" style="z-index:11;">
+                <!-- Left Sleeves -->
                 <img ng-src="/img/customshirts/men/closed/{{option.key}}.png" ng-if="option.selected" class="final-image"
-                  ng-repeat="option in DesignService.allOptions[2].options" style="z-index:10;">
+                  ng-repeat="option in DesignService.allOptions[1].options" style="z-index:11;">
+                  <!-- Collars -->
                   <img ng-src="/img/customshirts/men/closed/{{option.key}}.png" ng-if="option.selected" class="final-image"
-                    ng-repeat="option in DesignService.allOptions[4].options" style="z-index:10;">
-                  <div ng-repeat="fit_option in DesignService.allOptions[0].options" ng-if="fit_option.selected">
-                    <img ng-src="/img/customshirts/men/closed/{{fit_option.key}}/{{option.key}}.png"
-                      ng-if="option.selected" class="final-image" style="z-index:5;"
-                      ng-repeat="option in DesignService.allOptions[9].options">
-                  </div>
-            </div>
-              <div style="position:relative;width:380px;height:290px;top:20px;right:10px;float:right;text-align:center;
-              background: url('/img/customshirts/bg-menuL.jpg') no-repeat;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);overflow: hidden;">
-              <div style="background: rgba(40, 23, 13, 0.62);float:right;padding:20px;width:50%;height:100%;">
-                <div style="color:#fff;font-size:20px;line-height:30px;font-weight:600;">
+                    ng-repeat="option in DesignService.allOptions[2].options" style="z-index:10;">
+
+                      <!-- Fit Options -->
+                    <div ng-repeat="fit_option in DesignService.allOptions[0].options" ng-if="fit_option.selected">
+                      <!-- Based on Fit Options - Bottom Options -->
+                      <img ng-src="/img/customshirts/men/closed/{{fit_option.key}}/{{option.key}}.png"
+                        ng-if="option.selected" class="final-image" style="z-index:5;"
+                        ng-repeat="option in DesignService.allOptions[10].options">
+                    </div>
+                    <div ng-repeat="bottom_option in DesignService.allOptions[10].options" ng-if="bottom_option.selected">
+                      <!-- Buttons based on Bottom Options -->
+                      <img ng-src="/img/customshirts/men/closed/{{bottom_option.key}}/500.png" ng-if="!DesignService.allOptions[4].options[2].selected"
+                      class="final-image" style="z-index:11;">
+                      <!-- Plackets based on Bottom Options-->
+                      <img ng-src="/img/customshirts/men/closed/{{bottom_option.key}}/{{option.key}}.png"
+                        ng-if="option.selected" class="final-image"
+                        ng-repeat="option in DesignService.allOptions[4].options" style="z-index:10;">
+                        <!-- Seam Option based on Bottom Options -->
+                        <img ng-src="/img/customshirts/men/closed/{{bottom_option.key}}/{{option.key}}_R.png"
+                            ng-if="option.selected && option.key != 601" class="final-image"
+                            ng-repeat="option in DesignService.allOptions[5].options" style="z-index:10;">
+                          <!-- Seam Option based on Bottom Options -->
+                          <img ng-src="/img/customshirts/men/closed/{{bottom_option.key}}/{{option.key}}_L.png"
+                            ng-if="option.selected && option.key != 601" class="final-image"
+                            ng-repeat="option in DesignService.allOptions[5].options" style="z-index:10;">
+                    </div>
+              </div>
+              <div style="background: rgba(40, 23, 13, 0.62);float:right;padding:20px;width:30%;height:100%;">
+                <div style="color:#fff;font-size:16px;line-height:30px;font-weight:600;">
                   {{DesignService.allOptions[current_active_option].name}} Style
                 </div>
-                <div style="color:#fff;font-size:16px;line-height:30px;font-weight:500;margin:20px 0;">
+                <div style="color:#fff;font-size:14px;line-height:30px;font-weight:500;margin-bottom:20px;">
                   <span ng-repeat="option in DesignService.allOptions[current_active_option].options" ng-if="option.selected">
-                    {{option.name}}
+                    ({{option.name}})
                   </span>
                 </div>
                 <div style="margin:0 auto;" ng-if="current_active_option === 1">
                   <md-checkbox name="Epualettes" id="Epualettes" style="margin-left:-100px;"
-                    ng-checked="DesignService.allOptions[13].options[0].selected"
-                    ng-click="changeEpualletes()">
-                    <label for="Epualettes" style="font-size:16px;font-weight:600;">Epualettes</label>
+                    ng-checked="DesignService.allOptions[11].options[1].selected"
+                    ng-click="changeAdditionalOption()">
+                    <label for="Epualettes" style="font-size:14px;font-weight:600;">Epualettes</label>
                   </md-checkbox>
                 </div>
                 <div style="margin:0 auto;" ng-if="current_active_option === 4">
                   <md-checkbox name="seam_option" id="seam_option" style="margin-left:-100px;"
-                    ng-checked="DesignService.allOptions[5].options[0].selected"
-                    ng-click="changeSeams()">
-                    <label for="seam_option" style="font-size:16px;font-weight:600;">Seams</label>
+                    ng-checked="DesignService.allOptions[5].options[1].selected"
+                    ng-click="changeAdditionalOption()">
+                    <label for="seam_option" style="font-size:14px;font-weight:600;">Seams</label>
                   </md-checkbox>
                 </div>
                 <div style="margin:0 auto;" ng-if="current_active_option === 8">
                   <md-checkbox name="dart_option" id="dart_option" style="margin-left:-100px;"
-                    ng-checked="DesignService.allOptions[9].options[0].selected"
-                    ng-click="changeDarts()">
-                    <label for="dart_option" style="font-size:16px;font-weight:600;">Darts</label>
+                    ng-checked="DesignService.allOptions[9].options[1].selected"
+                    ng-click="changeAdditionalOption()">
+                    <label for="dart_option" style="font-size:14px;font-weight:600;">Darts</label>
                   </md-checkbox>
                 </div>
-                <div style="margin:0 auto;" ng-if="current_active_option === 6">
+                <div style="margin:0 auto;" ng-if="current_active_option === 6 && !DesignService.allOptions[6].options[0].selected">
                   <md-checkbox name="pocket_option" id="pocket_option" style="margin-left:-100px;"
-                    ng-checked="DesignService.allOptions[7].options[0].selected"
-                    ng-click="changePocketSide()">
-                    <label for="pocket_option" style="font-size:16px;font-weight:600;">Both Sides</label>
+                    ng-checked="DesignService.allOptions[7].options[1].selected"
+                    ng-click="changeAdditionalOption()">
+                    <label for="pocket_option" style="font-size:14px;font-weight:600;">2 Pockets</label>
                   </md-checkbox>
                 </div>
               </div>

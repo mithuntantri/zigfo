@@ -81,13 +81,13 @@ INSERT INTO options (option_key, option_name, option_code, price) VALUES ('602',
 
 INSERT INTO options (option_key, option_name, option_code, price) VALUES ('701', 'No Pocket', 'no_pocket', 0);
 INSERT INTO options (option_key, option_name, option_code, price) VALUES ('702', 'Classic Round', 'classic_round', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('704', 'Classic Angle', 'classic_angle', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('705', 'Diamond Straight', 'diamond_straight', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('706', 'Classic Square', 'classic_square', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('707', 'Round Flap', 'round_flap', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('708', 'Angle Flap', 'angle_flap', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('709', 'Diamond Flap', 'diamond_flap', 0);
-INSERT INTO options (option_key, option_name, option_code, price) VALUES ('710', 'Round with glass', 'round_with_glass', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('703', 'Classic Angle', 'classic_angle', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('704', 'Diamond Straight', 'diamond_straight', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('705', 'Classic Square', 'classic_square', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('706', 'Round Flap', 'round_flap', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('707', 'Angle Flap', 'angle_flap', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('708', 'Diamond Flap', 'diamond_flap', 0);
+INSERT INTO options (option_key, option_name, option_code, price) VALUES ('709', 'Round with glass', 'round_with_glass', 0);
 
 INSERT INTO options (option_key, option_name, option_code, price) VALUES ('801', 'Left', 'left', 0);
 INSERT INTO options (option_key, option_name, option_code, price) VALUES ('802', 'Both', 'both', 0);

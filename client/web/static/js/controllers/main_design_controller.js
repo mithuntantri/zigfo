@@ -46,6 +46,38 @@ angular.module("zigfo").controller('mainDesignController',
         })
         DesignService.allOptions[index].active = true
       }
+      $scope.changeAdditionalOption = ()=>{
+        let choice = $scope.current_active_option
+        let index
+        switch(choice){
+          case 1: index = 1
+                  choice = 11
+                  if (DesignService.allOptions[11].options[1].selected){
+                    index = 0
+                  }
+                  break
+          case 4: index = 1
+                  choice = 5
+                  if (DesignService.allOptions[5].options[1].selected){
+                    index = 0
+                  }
+                  break
+          case 6: index = 1
+                  choice = 7
+                  if (DesignService.allOptions[7].options[1].selected){
+                    index = 0
+                  }
+                  break
+          case 8: index = 1
+                  choice = 9
+                  if (DesignService.allOptions[9].options[1].selected){
+                    index = 0
+                  }
+                  break
+        }
+        console.log(choice, index);
+        DesignService.setValue(localStorage.designHash, choice, index)
+      }
       $scope.changeSubCategory = (index)=>{
         DesignService.setValue(localStorage.designHash, $scope.current_active_option, index)
       }
