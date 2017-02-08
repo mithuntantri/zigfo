@@ -260,7 +260,6 @@ li.dropdown-list-item:hover{
   padding: 0 7px;
   font-size: 12px;
 }
-HTMLJSCSS
 .checkboxdemoSelectAll .demo-legend {
   color: #3F51B5; }
 
@@ -317,4 +316,40 @@ HTMLJSCSS
 .search-input-text:focus{
   border: none !important;
   box-shadow: none !important;
+}
+.desktop-section{
+  margin:15px 0 30px;
+  color: #696b79;
+}
+.desktop-original {
+    display: inline-block;
+    float: left;
+    margin-left: -10px;
+    margin-right: 10px;
+}
+.sprites-original {
+    background-position: -421.5px 0 !important;
+    width: 47.5px;
+    height: 40px;
+}
+.myntraweb-footer-sprite {
+    background: url('/img/myntra2.png');
+    background-size: 706px 49px;
+    display: inline-block;
+}
+.desktop-delivery,
+.desktop-return {
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+}
+.sprites-return {
+    background-position: -469.5px 0 !important;
+    width: 34.5px;
+    height: 40px;
+}
+.sprites-delivery {
+    background-position: -504.5px 0;
+    width: 38px;
+    height: 40px;
 }

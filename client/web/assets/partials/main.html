@@ -54,7 +54,7 @@
               <div style="width:30%;float:left;font-size:12px;">
                 <div class="zig-nav-list-item" ui-sref="main.blouses">
                   <span class="zig-nav-list-item-label">Custom Blouse</span>
-                  <!-- <span class="zig-header-label coming-soon">Coming Soon</span> -->
+                  <span class="zig-header-label coming-soon">Coming Soon</span>
                 </div>
                 <div class="zig-nav-list-item">
                   <span class="zig-nav-list-item-label">Custom Shirts</span>
@@ -91,7 +91,7 @@
                   <div style="color:rgb(238, 95, 115);font-size:14px;font-weight:600;line-height:40px;margin-bottom:8px;text-align:left;">Trending Fabrics</div>
                 </div>
                 <div class="zig-nav-list-item" ng-repeat="fabric in FabricsService.topFabrics" style="float:left;margin:0 12px;">
-                  <!-- <span class="zig-nav-list-item-label">{{ fabric.brand }}</span> -->
+                  <span class="zig-nav-list-item-label">{{ fabric.brand }}</span>
                   <img src="{{fabric.img1}}" style="width:75px;height:75px;"/>
                 </div>
               </div>
@@ -142,35 +142,32 @@
   <div ui-view></div>
 </div>
 <div style="width:100%;display:inline-block;">
-  <div style="width:100%;height:330px;border-bottom:1px solid #e2e2e2;padding:50px 0;background-color:#fff;max-width:980px;margin:0 auto;margin-top:20px;">
+  <div style="width:100%;height:330px;padding:50px 0;background-color:#fff;max-width:980px;margin:0 auto;margin-top:20px;">
     <div style="width:15%;float:left;height:100%;">
-      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">POLICY INFO</div>
+      <div style="font-size:14px;color:#5a5a5a;font-weight:600;">POLICY INFO</div>
       <ul style="font-size:12px;color:#a4a3a3;">
-        <li>Privacy Policy</li>
-        <li>Terms of Sale</li>
-        <li>Terms of Use</li>
-        <li>T&C</li>
-        <li>Return Policy</li>
+        <li class="main-links-list">Privacy Policy</li>
+        <li class="main-links-list">T&C</li>
+        <li class="main-links-list">Return, Refund & Cancellation Policy</li>
       </ul>
     </div>
     <div style="width:15%;float:left;height:100%;">
-      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">USEFUL LINKS</div>
+      <div style="font-size:14px;color:#5a5a5a;font-weight:600;">USEFUL LINKS</div>
       <ul style="font-size:12px;color:#a4a3a3;">
-        <li>FAQs</li>
-        <li>Shipping</li>
-        <li>Contact Us</li>
-        <li>Cancellation</li>
-        <li>Track Orders</li>
+        <li class="main-links-list" ui-sref="main.faqs">FAQs</li>
+        <li class="main-links-list">Shipping</li>
+        <li class="main-links-list">Contact Us</li>
+        <li class="main-links-list">Track Orders</li>
       </ul>
     </div>
     <div style="width:40%;float:left;height:100%;">
-      <div style="font-size:14px;color:#5a5a5a;font-weight:400;">EXPERIENCE ZIGFO APP ON MOBILE</div>
+      <div style="font-size:14px;color:#5a5a5a;font-weight:600;padding-left:15px;">EXPERIENCE ZIGFO APP ON MOBILE</div>
       <div style="width:100%;height:85px;padding:15px;">
+        <i class="downloadApp3Icon footerIcon"></i>
         <i class="downloadApp1Icon footerIcon"></i>
         <!-- <i class="downloadApp2Icon footerIcon"></i> -->
-        <i class="downloadApp3Icon footerIcon"></i>
       </div>
-      <div style="width:40%;height:100px;float:left;text-align:center;">
+      <div style="width:26%;height:100px;float:left;text-align:center;padding-left:10px;">
         <i class="originalityIcon footerIcon"></i>
       </div>
       <div style="width:60%;height:100px;float:left;padding:20px 0;">
@@ -179,13 +176,47 @@
       </div>
     </div>
     <div style="width:30%;float:left;height:100%;">
-      <div style="font-size:14px;color:#5a5a5a;font-weight:400;padding-bottom:10px;">ABOUT ZIGFO</div>
-      <div style="font-size:11px;color:#a4a3a3;">
-        Our shirts are made with the single most essential ingredient ever, which is love. With this comes the finest quality of shirting and top workmanship from our tailors as well as heartfelt services from our teams. Our shirts are made with the most exclusive collars and cuffs with thick and soft finishes and exclusively edged seams. We are able to produce any style of collar, cuff, front placket, back, pocket, bottom styles possible. The list is endless! Monograms/Initials are possible anywhere on the shirt, depending on your choice. Marvel at our range of 100 % cotton fabrics, made of the highest thread counts and weaves. There is so much to choose from!
+      <div class="desktop-section">
+        <div class="myntraweb-footer-sprite desktop-original sprites-original"></div>
+        <div><strong>100% ORIGINAL</strong> guarantee for all products at zigfo.com</div>
+      </div>
+      <div class="desktop-section">
+        <div class="myntraweb-footer-sprite desktop-return sprites-return"></div>
+        <div><strong>Return withinn 15days</strong> of placing your order</div>
+      </div>
+      <div class="desktop-section">
+        <div class="myntraweb-footer-sprite desktop-delivery sprites-delivery"></div>
+        <div><strong>Get free delivery/pickup</strong> for every order baove Rs. 999</div>
       </div>
     </div>
   </div>
-  <div style="width:100%;height:128px;padding:25px 8%;background-color:#fff;border-bottom:1px solid #e2e2e2;max-width:980px;margin:0 auto;">
+  <div style="width:100%;display:inline-block;">
+    <div style="max-width:980px;margin:0 auto;border-bottom:1px solid #e2e2e2;padding:15px 0;">
+      <hr style="background-color:#eaeaec;height:1px;border:1px;">
+      <div style="font-size:14px;color:#5a5a5a;font-weight:600;padding-bottom:10px;position:absolute;margin-top:-17px;background-color:#fff;padding-right:10px;">ABOUT ZIGFO</div>
+      <div style="font-size:13px;color:#a4a3a3;padding-top:15px;">
+        Zigfo Technology Private Limited is a start-up provides high quality online designer’s clothing. Zigfo
+        logo has two arrows in opposite direction, which shows the expanding factor for designers clothing,
+        It show that, this is the right time to penetrate custom made clothing and designer wear to masses
+        and it shall not have a limited access. We all knows that world is moving towards digitalization we
+        are becoming technologically advance than ever before, uses of smartphone and internet is reaching
+        to every corner of India. Apart from expanding factor Zigfo logo also denote the quality balance
+        between i.e. fashion and the technology. Zigfo bringing 3D Technology to make your own design
+        through custom made shirt, trousers, suits & blouses, and you can see them on screen how it looks
+        before order placing. A user can provide his new fabric or can select from the wide range of branded
+        and high quality fabric displayed online on www.zigfo.com. Designers at Zigfo are very creative and
+        from best of Fashion Designing Institute who are working day & Night to bring wide range of theme
+        & designs to provide you a great look and confidence. A person look good when s/he wear nice
+        fabric but s/he looks awesome when wear the best fit cloth crafted and specially designs for them.
+        We have custom made measurement options on website and we do provide designer on call service
+        to the certain areas. Zigfo cater to both Individual and business. You required quality Fit & Fabric
+        with custom made designs for your formal, semi-formal or casual wear, than must try Zigfo. If you
+        required designer wear for some party or marriage function than don’t forget to check with our
+        designer’s choice segment or simply call us.
+      </div>
+    </div>
+  </div>
+  <div style="width:100%;height:128px;padding:25px 8%;background-color:#fff;max-width:980px;margin:0 auto;">
     <div style="width:50%;height:100%;float:left;">
       <div style="font-size:14px;color:#5a5a5a;font-weight:400;">PAYMENT</div>
       <div style="width:100%;height:60px;line-height:60px;">
@@ -209,10 +240,67 @@
   </div>
   <div style="width:100%;height:40px;line-height:40px;padding:0 8%;max-width:980px;margin:0 auto;">
     <div style="width:50%;font-size:12px;float:left;text-align:left;">
-      Have Issues? Contact Us
+      Have Issues? <a>Contact Us</a>
     </div>
-    <div style="width:50%;font-size:11px;float:left;text-align:right;">
-      Copyright © 2016, Raee Creations Private Limited. All Rights Reserved
+    <div style="width:50%;font-size:12px;float:left;text-align:right;">
+      © 2016, Zigfo Technology Private Limited. All Rights Reserved
+    </div>
+  </div>
+  <div style="width:100%;display:inline-block;">
+    <div style="width:100%;max-width:980px;margin:0 auto;">
+      <hr style="background-color:#eaeaec;height:1px;border:1px;">
+      <div style="font-size:12px;color:#5a5a5a;font-weight:600;padding-bottom:10px;position:absolute;margin-top:-17px;background-color:#fff;padding-right:10px;">Disclaimer</div>
+      <div style="padding:5px 0;">
+        <span style="font-weight:600;font-size:11px;color:#5a5a5a;">No Warranties</span>
+        <span style="font-weight:400;font-size:10px;padding:0 5px;color:#a4a3a3;">This website is provided “as is” without any representations or warranties, express or implied. ZIGFO TECHNOLOGY PRIVATE
+          LIMITED makes no representations or warranties in relation to this website or the information and materials provided on this
+          website.Without prejudice to the generality of the foregoing paragraph, ZIGFO TECHNOLOGY PRIVATE LIMITED does not warrant that:
+          <li>this website will be constantly available, or available at all; or</li>
+          <li>the information on this website is complete, true, accurate or non-misleading.</li>
+          Nothing on this website constitutes, or is meant to constitute, advice of any kind. [If you require advice in relation to any [legal,
+          financial or medical] matter you should consult an appropriate professional]</span>
+      </div>
+      <div style="padding:5px 0;">
+        <span style="font-weight:600;font-size:11px;color:#5a5a5a;">Limitations of liability</span>
+        <span style="font-weight:400;font-size:10px;padding:0 5px;color:#a4a3a3;">ZIGFO TECHNOLOGY PRIVATE LIMITED will not be liable to you (whether under the law of contract, the law of torts or
+          otherwise) in relation to the contents of, or use of, or otherwise in connection with, this website:
+          <li>to the extent that the website is provided free-of-charge, for any direct loss</li>
+          <li>for any indirect, special or consequential loss; or</li>
+          <li>for any business losses, loss of revenue, income, profits or anticipated savings, loss of contracts or business relationships,
+          loss of reputation or goodwill, or loss or corruption of information or data.</li>
+          These limitations of liability apply even if ZIGFO TECHNOLOGY PRIVATE LIMITED has been expressly advised of the potential
+          loss.</span>
+      </div>
+      <div style="padding: 5px 0;">
+        <span style="font-weight:600;font-size:11px;color:#5a5a5a;">Exceptions</span>
+        <span style="font-weight:400;font-size:10px;padding:0 5px;color:#a4a3a3;">Nothing in this website disclaimer will exclude or limit any warranty implied by law that it would be unlawful to exclude or limit;
+          and nothing in this website disclaimer will exclude or limit ZIGFO TECHNOLOGY PRIVATE LIMITED’s liability in respect of
+          any:
+          <li>death or personal injury caused by ZIGFO TECHNOLOGY PRIVATE LIMITED negligence</li>
+          <li>fraud or fraudulent misrepresentation on the part of ZIGFO TECHNOLOGY PRIVATE LIMITED or</li>
+          <li>matter which it would be illegal or unlawful for ZIGFO TECHNOLOGY PRIVATE LIMITED to exclude or limit, or to
+          attempt or purport to exclude or limit, its liability.</li></span>
+      </div>
+      <div style="padding: 5px 0;margin-top:-20px;">
+        <span style="font-weight:600;font-size:11px;color:#5a5a5a;">Reasonableness</span>
+        <span style="font-weight:400;font-size:10px;padding:0 5px;color:#a4a3a3;">By using this website, you agree that the exclusions and limitations of liability set out in this website disclaimer are reasonable.
+            If you do not think they are reasonable, you must not use this website.</span>
+      </div>
+      <div style="padding: 5px 0;">
+        <span style="font-weight:600;font-size:11px;color:#5a5a5a;">Other parties
+          <span style="font-weight:400;font-size:10px;padding:0 5px;color:#a4a3a3;">You accept that, as a limited liability entity, ZIGFO TECHNOLOGY PRIVATE LIMITED has an interest in limiting the personal
+          liability of its officers and employees. You agree that you will not bring any claim personally against ZIGFO TECHNOLOGY
+          PRIVATE LIMITED 'S officers or employees in respect of any losses you suffer in connection with the website.
+          Without prejudice to the foregoing paragraph, you agree that the limitations of warranties and liability set out in this website
+          disclaimer will protect ZIGFO TECHNOLOGY PRIVATE LIMITED 'S officers, employees, agents, subsidiaries, successors, assigns
+          and sub-contractors as well as ZIGFO TECHNOLOGY PRIVATE LIMITED.</span>
+        </div>
+      <div style="padding: 5px 0;">
+        <span style="font-weight:600;font-size:11px;color:#5a5a5a;">Unenforceable provisions
+        <span style="font-weight:400;font-size:10px;padding:0 5px;color:#a4a3a3;">If any provision of this website disclaimer is, or is found to be, unenforceable under applicable law, that will not affect the
+          enforceability of the other provisions of this website disclaimer.
+          You can contact ZIGFO by email to info@zigfo.com.</span>
+        </div>
     </div>
   </div>
 </div>

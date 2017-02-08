@@ -1,0 +1,41 @@
+<div class="center-container">
+  <div class="faq-header">
+    <div class="faq-contact">
+      <span style="font-weight:600;font-size:12px;color:#444546;">Still need help?</span>
+      <div class="faq-buttons">Contact us</div>
+    </div>
+    <span style="font-weight:600;font-size:21px;line-height:40px;">Frequently Asked Questions</span>
+  </div>
+  <div style="width:100%;margin-top:10px;padding:0 20px;">
+    <div style="width:70%;float:left;padding:15px 35px;">
+      <div style="width:100%;height:30px;font-weight:600;font-size:18px;line-height:30px;color:#444546;margin-top:10px;">Top Queries</div>
+      <div class="faq-subheading-2">
+        <div class="faq-contact">
+          <div class="faq-buttons">Track Orders</div>
+        </div>
+        <span style="font-weight:400;font-size:14px;line-height:40px;color:#697071;">You can track your orders in 'My Orders'</span>
+      </div>
+      <div class="all-faqs">
+        <div ng-repeat="faq in faqs">
+          <div ng-click="faq.opened = !faq.opened" class="faq-question">{{faq.q}}</div>
+          <div class="faq-answer-container" ng-if="faq.opened"><div class="faq-answer">{{faq.a}}</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="width:30%;float:right;padding-top:50px;">
+      <div style="width:100%;height:25px;font-size:14px;color:#444546;font-weight:600;padding-left:15px;">Useful Links</div>
+      <div style="width:100%;min-height:40px;color:#444546;border-left:1px solid #ccc;">
+        <ul class="links-list">
+          <li class="links-list active">FAQ's</li>
+          <li class="links-list">My Orders</li>
+          <li class="links-list">About Us</li>
+          <li class="links-list">Privacy Policy</li>
+          <li class="links-list">T&C</li>
+          <li class="links-list">Return, Refund & Cancellation Policy</li>
+          <li class="links-list">Shipping Policy</li>
+          <li class="links-list">Contact Us</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
