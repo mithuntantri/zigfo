@@ -3,6 +3,9 @@ package main
 import (
   "github.com/gin-gonic/gin"
 )
+
+var sms_auth_key = "140323AOfITk4chB5896d1ee"
+
 func main()  {
   connectDB()
   router := gin.Default()

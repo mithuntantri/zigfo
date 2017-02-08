@@ -5,6 +5,7 @@ import (
 )
 func createotpHandler(c *gin.Context)  {
   var request struct {
+    FirstName string `json:"firstname"`
     EmailID string `json:"email_id"`
     Mobileno    string `json:"mobileno"`
     RequestType string `json:"request_type"`
@@ -15,6 +16,7 @@ func createotpHandler(c *gin.Context)  {
         otp := generate_otp(request.Mobileno)
         if req := createOTP(request.Mobileno, otp); req {
           go sendOtpThroughMail(request.EmailID, otp)
+          go sendOtpThroughSms(request.FirstName, request.Mobileno, otp)
           go expireOTPchannel(request.Mobileno)
         }
         c.JSON(200, gin.H{

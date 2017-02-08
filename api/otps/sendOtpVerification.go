@@ -4,7 +4,22 @@ import (
   "fmt"
   "crypto/tls"
   "gopkg.in/gomail.v2"
+  "net/http"
 )
+
+func sendOtpThroughSms(firstname, mobileno, otp string) {
+  fmt.Println("Sending OTP SMS")
+  senderid := "ZIGFOT"
+  country_code := "91"
+  route_id := "4"
+  message := `Hi `+firstname+`, `+otp+` is your OTP for verification. Do not share this OTP to anyone for security reasons. This OTP is valid for only 10 minutes.`
+  resp, err := http.Get(`https:///control.msg91.com/api/sendhttp.php?authkey=` + sms_auth_key + `&mobiles=`+ mobileno +`&message=`+ message +`&sender=`+ senderid +`&route=` + route_id + `&country=` + country_code)
+  if err != nil{
+    checkErr(err)
+  }
+  defer resp.Body.Close()
+}
+
 func sendOtpThroughMail(email_id, otp string)  {
   fmt.Println("Sending OTP Email")
   mail := gomail.NewMessage()
