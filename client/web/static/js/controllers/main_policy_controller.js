@@ -1,5 +1,5 @@
 angular.module('zigfo')
-.controller('faqsController', ['$scope', function($scope){
+.controller('policyController', ['$scope', function($scope){
   $scope.faqs = [
     { 'opened': false,
       'q': 'What is an Order made Garments (tailor made Clothing)?',

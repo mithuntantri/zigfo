@@ -150,7 +150,37 @@ angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 
         .state("main.faqs", {
           url: "faqs",
           templateUrl: "partials/main.faqs.html",
-          controller: "faqsController"
+          controller: "policyController"
+        })
+        .state("main.tandc", {
+          url: "terms",
+          templateUrl: "partials/main.tandc.html",
+          controller: "policyController"
+        })
+        .state("main.privacy", {
+          url: "privacyPolicy",
+          templateUrl: "partials/main.privacy.html",
+          controller: "policyController"
+        })
+        .state("main.contactus", {
+          url: "contactus",
+          templateUrl: "partials/main.contactus.html",
+          controller: "policyController"
+        })
+        .state("main.shipping", {
+          url: "shippingPolicy",
+          templateUrl: "partials/main.shipping.html",
+          controller: "policyController"
+        })
+        .state("main.refund", {
+          url: "returnRefundPolicy",
+          templateUrl: "partials/main.refund.html",
+          controller: "policyController"
+        })
+        .state("main.abusepolicy", {
+          url: "abusePolicy",
+          templateUrl: "partials/main.abusepolicy.html",
+          controller: "policyController"
         })
         .state("app", {
           url: "/app",

@@ -18,6 +18,9 @@ angular.module("zigfo").controller('mainController',
              }
          }]
       });
+      $('#mainpageslider').on('afterChange', function(event, slick, currentSlide){
+        console.log('changed',$(slick.$slides.get(currentSlide)).attr('id'));
+      });
       $scope.carouselPrev = ()=>{
         console.log('going next');
         $('#mainpageslider').slick('slickPrev')

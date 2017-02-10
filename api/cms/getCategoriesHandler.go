@@ -44,27 +44,27 @@ func getCategoriesHandler(c *gin.Context)  {
       Img : "/img/top_coupons.jpg",
     }
     var desc5 = Description{
-      Header : "TAILOR MADE CUSTOM SHIRTS",
-      Description : "Customize & Get Home Delivered Men's Formal",
+      Header : "TAILOR MADE CUSTOM BLOUSES",
+      Description : "Choose among the wide variety of Blouse styles",
       Link : "ORDER NOW",
       Img : "/img/slider1.jpg",
     }
     var desc6 = Description{
       Header : "TAILOR MADE CUSTOM SHIRTS",
       Description : "Customize & Get Home Delivered Men's Formal",
-      Link : "ORDER NOW",
+      Link : "COMING SOON",
       Img : "/img/slider2.jpg",
     }
     var desc7 = Description{
-      Header : "TAILOR MADE CUSTOM SHIRTS",
-      Description : "Customize & Get Home Delivered Men's Formal",
-      Link : "ORDER NOW",
+      Header : "TAILOR MADE CUSTOM SUITS",
+      Description : "Design your 2/3 Piece Men's & Women's Suits",
+      Link : "COMING SOON",
       Img : "/img/slider3.jpg",
     }
     var desc8 = Description{
-      Header : "TAILOR MADE CUSTOM SHIRTS",
-      Description : "Customize & Get Home Delivered Men's Formal",
-      Link : "ORDER NOW",
+      Header : "CUSTOMIZED CASUALS",
+      Description : "Get your Best Fit Casual wear today!",
+      Link : "COMING SOON",
       Img : "/img/slider4.jpg",
     }
 

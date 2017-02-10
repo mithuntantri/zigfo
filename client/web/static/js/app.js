@@ -11,7 +11,7 @@ import "./controllers/main_profile_controller"
 import "./controllers/main_design_controller"
 import "./controllers/app_design_controller"
 import "./controllers/pickup_controller"
-import "./controllers/faqs_controller"
+import "./controllers/main_policy_controller"
 
 import "./controllers/main_login_controller"
 import "./controllers/main_signup_controller"
