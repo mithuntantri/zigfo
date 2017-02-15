@@ -67,11 +67,23 @@ func getCategoriesHandler(c *gin.Context)  {
       Link : "COMING SOON",
       Img : "/img/slider4.jpg",
     }
+    var desc9 = Description{
+      Header : "CUSTOMIZED CASUALS",
+      Description : "Get your Best Fit Casual wear today!",
+      Link : "COMING SOON",
+      Img : "/img/slider5.jpg",
+    }
+    var desc10 = Description{
+      Header : "CUSTOMIZED CASUALS",
+      Description : "Get your Best Fit Casual wear today!",
+      Link : "COMING SOON",
+      Img : "/img/slider6.jpg",
+    }
 
     category1.Descriptions = make([]Description, 0)
     category2.Descriptions = make([]Description, 0)
     category1.Descriptions = append(category1.Descriptions, desc1, desc2, desc3, desc4)
-    category2.Descriptions = append(category2.Descriptions, desc5, desc6, desc7, desc8)
+    category2.Descriptions = append(category2.Descriptions, desc5, desc6, desc7, desc8, desc9, desc10)
 
     category1.Category = "Top Categories"
     category2.Category = "All Categories"
