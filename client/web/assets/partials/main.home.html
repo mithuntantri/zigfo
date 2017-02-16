@@ -19,10 +19,10 @@
         init-onload="true" data="CategoriesService.sliders" arrows="true" style="width:100%;height:100%;margin:0 !important;" autoplay="true" id="mainpageslider">
       <div class="slick-item" ng-repeat="slide in CategoriesService.sliders" style="width:100%;height:100% !important;">
         <img src="{{slide.img}}" style="width:100%;height:100%;" alt=""/>
-        <div class="img-overlay" style="position:absolute;" ng-if="">
-          <span class="heading">{{ slide.heading }}</span><br/>
-          <span class="description">{{ slide.description }}</span><br/>
-          <span class="link">{{ slide.link }}<i class="material-icons" style="font-size:14px;line-height:15px;padding:4px 2px;">chevron_right</i></span>
+        <div class="img-overlay" style="position:absolute;">
+          <span class="heading">Designers on Call</span><br/>
+          <span class="description">+91-7348-950-333 or +91-7406-146-333</span><br/>
+          <span class="link" ui-sref="main.contactus">Contact Us<i class="material-icons" style="font-size:14px;line-height:15px;padding:4px 2px;">chevron_right</i></span>
         </div>
       </div>
     </slick>

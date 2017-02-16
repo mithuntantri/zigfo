@@ -122,11 +122,11 @@ angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 
           controller: "mainSignupController"
         })
 
-        .state("main.design", {
-          url: "customshirts",
-          templateUrl: "partials/main.design.html",
-          controller: "mainDesignController"
-        })
+        // .state("main.design", {
+        //   url: "customshirts",
+        //   templateUrl: "partials/main.design.html",
+        //   controller: "mainDesignController"
+        // })
         .state("main.profile", {
           url: "profile",
           templateUrl: "partials/main.profile.html",
@@ -137,16 +137,16 @@ angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 
           templateUrl: "partials/main.pickup.html",
           controller: "pickupController"
         })
-        .state("main.fabrics", {
-          url : "fabrics",
-          templateUrl: "partials/main.fabrics.html",
-          controller: "mainFabricsController"
-        })
-        .state("main.blouses", {
-          url : "blouses",
-          templateUrl: "partials/main.blouses.html",
-          controller: "mainBlousesController"
-        })
+        // .state("main.fabrics", {
+        //   url : "fabrics",
+        //   templateUrl: "partials/main.fabrics.html",
+        //   controller: "mainFabricsController"
+        // })
+        // .state("main.blouses", {
+        //   url : "blouses",
+        //   templateUrl: "partials/main.blouses.html",
+        //   controller: "mainBlousesController"
+        // })
         .state("main.faqs", {
           url: "faqs",
           templateUrl: "partials/main.faqs.html",
