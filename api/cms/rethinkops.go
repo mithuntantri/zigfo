@@ -492,6 +492,7 @@ func getNewBlouseHash(hash string) initBlouseData{
   initdata.Favorites = blousehash.Favorites
   initdata.Gender = "F"
   initdata.CheckedOut = blousehash.CheckedOut
+  initdata.NeckType = blousehash.NeckType
   initdata.Front = fetchBlouseOptionsFromKey(hash, blousehash.Front,"Front", blousehash.NeckType)
   initdata.Back = fetchBlouseOptionsFromKey(hash, blousehash.Back, "Back", blousehash.NeckType)
   initdata.Sleeves = fetchBlouseOptionsFromKey(hash, blousehash.Sleeves, "Sleeves", "all")
@@ -682,6 +683,7 @@ func removefromFav(hash string) bool{
 }
 func updateBlouseHashTable(hash , option_name, option_category, option_type string) bool{
   key := getBlouseOptionKeyFromName(option_name, option_category, option_type)
+
   var blouseHash newBlouseHash
   curr, _ := r.DB("mithun").Table("blouseHash").Get(hash).Run(session)
   curr.One(&blouseHash)

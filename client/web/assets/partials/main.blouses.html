@@ -1,0 +1,318 @@
+<div class="center-container" style="min-height:600px;display:block;">
+  <div style="width:25%;float:left;height:100%;">
+    <div class="my-account-header">
+      <span ng-if="!BlousesService.showCategories">Customize your design</span>
+      <span ng-if="BlousesService.showCategories">Select a Neck Style</span>
+    </div>
+    <div class="my-account-username">
+      Blouse Design
+    </div>
+  </div>
+  <div class="new-breadcrumbs-container">
+    <ul class="new-breadcrumbs">
+      <li class="first-step" ng-class="{'active':styles_active}">DESIGN</li>
+      <li class="middle-divider">------</li>
+      <li class="second-step" ng-class="{'active':fabrics_active}">FABRIC</li>
+      <li class="middle-divider">------</li>
+      <li class="third-step" ng-class="{'active':measurements_active}">BAG</li>
+      <li class="middle-divider">------</li>
+      <li class="fourth-step" ng-class="{'active':checkout_active}">PAYMENT</li>
+    </ul>
+  </div>
+  <div class="new-sidebuttons">
+    <div class="secure-label">
+      <div style="float:left;padding:0 5px;"><i class="material-icons" style="font-size:17px; ">lock</i></div>
+      <div style="float:left;">100% SECURE</div>
+    </div>
+  </div>
+  <div class="my-account-sidebar" ng-show="styles_active && !BlousesService.showCategories">
+    <div class="sidebar-options">
+      <ul class="sidebar-option">
+        <div class="overview">
+          <div class="sidebar-header">NECK</div>
+          <li class="sidebar-option" ng-click="current_active_option = 0"
+            ng-class="{'active': current_active_option == 0}">
+            Front
+          </li>
+          <li class="sidebar-option" ng-click="current_active_option = 1"
+            ng-if="BlousesService.BlouseOptions.back"
+            ng-class="{'active': current_active_option ==  1}">
+            Back
+          </li>
+        </div>
+        <div class="account">
+          <div class="sidebar-header">OPTIONS</div>
+          <li class="sidebar-option" ng-click="current_active_option = 2"
+            ng-class="{'active': current_active_option == 2}">
+            Sleeve
+          </li>
+          <li class="sidebar-option" ng-click="current_active_option = 3"
+            ng-class="{'active': current_active_option ==  3}">
+            Cut
+          </li>
+          <li class="sidebar-option" ng-click="current_active_option = 4"
+            ng-class="{'active': current_active_option == 4}">
+            Size
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="my-account-content" ng-show="measurements_active" style="width:100%;">
+    <div style="width:400px;margin:0 auto;height:100px;">
+      <div style="width:100px;height:100px;float:left;padding-top:15px;">
+        <img src="/img/delivery.png" style="width:100%;"/>
+      </div>
+      <div style="width:300px;height:100px;float:left;padding:25px;">
+        <div style="font-size:19px;line-height:30px;text-align:center;font-weight:600;">Personal Pilot at the</div>
+        <div style="font-size:19px;line-height:30px;text-align:center;font-weight:600;">Comfort of your Home</div>
+      </div>
+    </div>
+    <div style="width:615px;margin:0 auto;height:33px;font-size:12px;line-height:33px;margin-bottom:20px;">
+      Fabric Pickup | Certified Pilot Measurement Pickup | No Convenience Fee | Book online or call us at 99998 99998
+    </div>
+    <div class="search-locality-container search-location">
+      <div style="float:left;width:70px;text-align:center;height:36px;">
+        <i class="material-icons" style="line-height:36px;color: #00cbc4;">location_searching</i>
+      </div>
+      <div style="float:left;width:360px;text-align:center;">
+        <input type="text" gm-places-autocomplete ng-model="autocomplete" placeholder="Search Nearby Location (Locality, Area or Road)" class="location-search-input"/>
+      </div>
+      <div style="float:left;width:70px;text-align:center;padding:2px;">
+        <div class="location-search-button" ng-click="ModalService.OpenAppointmentsModal();generateMaps();">
+          GO
+        </div>
+      </div>
+    </div>
+    <div style="width:50%;height:33px;border-bottom:1px solid #f1f1f1;margin:0 auto;">
+      <div style="margin:0 auto;width:40px;line-height:65px;background-color:#fff;text-align:center;">OR</div>
+    </div>
+  </div>
+  <div class="my-account-content" ng-show="fabrics_active">
+    <div style="width:100%;height:133px;margin-bottom:20px;">
+      <div style="width:100%;height:100px;">
+
+      </div>
+      <div style="width:50%;height:33px;border-bottom:1px solid #f1f1f1;margin:0 auto;">
+        <div style="margin:0 auto;width:40px;line-height:65px;background-color:#fff;text-align:center;">OR</div>
+      </div>
+    </div>
+    <div style="width:100%;text-align:left;font-size:16px;line-height:50px;font-weight:500;">
+      CHOOSE YOUR FABRIC
+      <span class="zig-header-label coming-soon">Recommended</span>
+    </div>
+    <div class="product-card" ng-repeat="fabric in FabricsService.fabrics" ng-click="showFabricDetails($index)">
+      <div class="product-img">
+        <img src="{{fabric.img1}}" style="width:200px;height:200px;"/>
+      </div>
+      <div class="product-desc">
+        <div style="font-size:14px;color:#999;line-height:25px;font-weight:500;padding-bottom:5px;height:25px;">
+          <div style="float:left;">{{fabric.brand}}</div>
+          <div style="width:23px;float:right;">
+            <div style="width:23px;float:left;height:33px;line-height:33px;cursor:pointer;" ng-mouseover="faviconhover = !DesignService.favorites"
+              ng-mouseleave="faviconhover = DesignService.favorites"
+              ng-click="addremoveFavorites()">
+              <div style="float:left;line-height:43px;padding:0 10px;color:#e42c42;" ng-if="faviconhover"><i class="material-icons" style="font-size:17px;">favorite</i></div>
+              <div style="float:left;line-height:43px;padding:0 10px;" ng-if="!faviconhover"><i class="material-icons" style="font-size:17px;">favorite_border</i></div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#999;line-height:20px;font-weight:600;padding-top:5px;height:30px;">
+          {{fabric.category}}
+        </div>
+        <div style="font-size:12px;color:#999;line-height:20px;font-weight:500;padding-top:5px;height:30px;">
+          {{fabric.title}}
+        </div>
+        <div style="font-size:12px;line-height:20px;height:20px;">
+          <i class="material-icons gold" ng-repeat="i in getNumber(fabric.stars) track by $index" style="font-size:13px;float:left;">star</i>
+        </div>
+        <div style="font-size:14px;line-height:23px;height:23px;">
+          <span class="old-price">Rs. {{fabric.rate}}</span>
+          <span class="new-price">Rs. {{fabric.disc_rate}}</span>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%;height:50px;display:inline-block;margin-top:20px;">
+      <div class="visual-price">
+        <div style="width:65px;float:left;font-weight:400;font-size:12px;">Total Price </div>
+        <div style="width:100px;float:left;text-align:right;font-weight:400;color:#f7931d;font-size:17px;">Rs.{{BlousesService.BlouseOptions.total_price}}</div>
+        <div style="width:100%;text-align:right;font-size:12px;line-height:25px;">Prices Inclusive of all taxes</div>
+      </div>
+    </div>
+    <div ng-click="changeDesignTabs(false, false, true, false)"
+      class="proceed-next-btn">
+      PROCEED NEXT
+    </div>
+  </div>
+  <div class="my-account-content" ng-show="BlousesService.showCategories" style="width:100%;">
+    <div style="margin:0 auto;">
+      <div class="product-card" ng-click="BlousesService.initOptions(category.name)"
+        ng-repeat="category in BlousesService.FrontCategories" ng-if="BlousesService.FrontSide">
+        <div class="product-img">
+          <img src="{{category.img}}" style="width:200px;height:200px;"/>
+        </div>
+        <div class="product-desc">
+          {{category.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-account-content" ng-show="!BlousesService.showCategories">
+    <div class="content-card">
+      <div class="top-design-img">
+        <div class="visual-product">
+          <div style="width:100%;height:330px;padding:20px 10px;position:relative;">
+            <img ng-src="/img/blouse/fabric1/front/{{frontimage.key}}.png" ng-repeat="frontimage in BlousesService.BlouseOptions.front" ng-if="frontimage.selected"
+             style="position:absolute;top:0;left:140px;height:440px;"/>
+             <img ng-src="/img/blouse/fabric1/front/{{sleeveimage.key}}.png" ng-repeat="sleeveimage in BlousesService.BlouseOptions.sleeves" ng-if="sleeveimage.selected"
+              style="position:absolute;top:0;left:140px;height:440px;"/>
+          </div>
+          <div style="width:100%;height:50px;">
+            <div class="visual-price">
+              <div style="width:65px;float:left;font-weight:400;font-size:12px;">Total Price </div>
+              <div style="width:100px;float:left;text-align:right;font-weight:400;color:#f7931d;font-size:17px;">Rs.{{BlousesService.BlouseOptions.total_price}}</div>
+              <div style="width:100%;text-align:right;font-size:12px;line-height:25px;">Prices Inclusive of all taxes</div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-bottom-btn">
+          <div ng-click="changeDesignTabs(false, true, false, false)"
+            class="proceed-next-btn">
+            PROCEED NEXT
+          </div>
+          <div style="width:200px;float:left;height:33px;line-height:33px;cursor:pointer;" ng-mouseover="faviconhover = !DesignService.favorites"
+            ng-mouseleave="faviconhover = DesignService.favorites"
+            ng-click="addremoveFavorites()">
+            <div style="float:left;line-height:43px;font-size:17px;padding:0 10px;color:#e42c42;" ng-if="faviconhover"><i class="material-icons">favorite</i></div>
+            <div style="float:left;line-height:43px;font-size:17px;padding:0 10px;" ng-if="!faviconhover"><i class="material-icons">favorite_border</i></div>
+            <div style="float:left;line-height:33px;">SAVE FOR LATER</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-subcategories">
+        <div ng-if="BlousesService.BlouseOptions && ready" style="width:100%;height:100%;">
+          <div class="left-carousel" ng-click="carouselPrev()">
+            <i class="material-icons left-carousel-icon">chevron_left</i>
+          </div>
+          <div class="right-carousel" ng-click="carouselNext()">
+            <i class="material-icons right-carousel-icon">chevron_right</i>
+          </div>
+          <slick class="carousel-content-design1" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="BlousesService.BlouseOptions.front" arrows="true" ng-if="current_active_option == 0">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in BlousesService.BlouseOptions.front">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-design1" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+            init-onload="true" data="BlousesService.BlouseOptions.back" arrows="true" ng-if="current_active_option == 1">
+            <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in BlousesService.BlouseOptions.back">
+              <div class="slick-item-desc"></div>
+              <div class="slick-item-header">{{option.name}}</div>
+            </div>
+          </slick>
+          <slick class="carousel-content-design1" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="BlousesService.BlouseOptions.sleeves" arrows="true" ng-if="current_active_option == 2">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in BlousesService.BlouseOptions.sleeves">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+          <slick class="carousel-content-design1" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+            init-onload="true" data="BlousesService.BlouseOptions.cut" arrows="true" ng-if="current_active_option == 3">
+            <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in BlousesService.BlouseOptions.cut">
+              <div class="slick-item-desc"></div>
+              <div class="slick-item-header">{{option.name}}</div>
+            </div>
+          </slick>
+          <slick class="carousel-content-design1" dots="false" infinite="false" speed="300" slides-to-show="3" touch-move="true" slides-to-scroll="1" arrows="false" centerMode="true"
+              init-onload="true" data="BlousesService.BlouseOptions.blouse_length" arrows="true" ng-if="current_active_option == 4">
+              <div class="slick-item" ng-click="changeSubCategory($index)" ng-class="{'active': option.selected}" ng-repeat="option in BlousesService.BlouseOptions.blouse_length">
+                <div class="slick-item-desc"></div>
+                <div class="slick-item-header">{{option.name}}</div>
+              </div>
+          </slick>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui small modal appointments">
+  <div style="width:100%;height:120px;background-color:#2874f0;">
+    <!-- <div style="width:70%;height:80%;padding:25px 15px;float:left;">
+      <div style="font-size:22px;color:#fff;line-height:50px;font-weight:400;">
+        Book Appoinment
+      </div>
+      <div style="font-size:15px;color:#fff;line-height:23px;font-weight:400;">
+        Personal Pilot at the comfort of your Home
+      </div>
+      <div style="padding:50px 10px;font-size:12px;color:#fff;font-weight:400;line-height:18px;">
+        Fabric Pick-Up | Home Measurement Pick-Up | Book online or Call us at 99998 99998
+      </div>
+    </div> -->
+    <div style="width:100%;height:100%;float:left;padding:0 100px;">
+      <md-button class="md-raised" ng-click="gotoAppointments()" style="top:60px;z-index:1;float:left;margin-right:10px;">
+        <div style="float:left;width:30px;text-align:center;height:36px;">
+          <i class="material-icons" style="line-height:36px;font-size:17px;">face</i>
+        </div>
+        <div style="float:left;min-width:120px;text-align:center;font-size:12px;">
+          SCHEDULE FOR NOW
+        </div>
+      </md-button>
+      <md-button class="md-raised" ng-click="gotoAppointments()" style="top:60px;z-index:1;float:left;margin-left:10px;">
+        <div style="float:left;width:30px;text-align:center;height:36px;">
+          <i class="material-icons" style="line-height:36px;font-size:17px;">send</i>
+        </div>
+        <div style="float:left;min-width:120px;text-align:center;font-size:12px;">
+          SCHEDULE FOR LATER
+        </div>
+      </md-button>
+    </div>
+  </div>
+  <div style="width:100%;height:400px;float:left;" ng-hide="appointments_page">
+    <md-button class="md-raised" ng-click="autocompleteMaps()" style="bottom:0;z-index:1;left:0px;position:absolute;">
+      <div style="float:left;width:30px;text-align:center;height:36px;">
+        <i class="material-icons" style="line-height:36px;font-size:17px;">location_searching</i>
+      </div>
+      <div style="float:left;width:120px;text-align:center;font-size:12px;">
+        CURRENT LOCATION
+      </div>
+    </md-button>
+    <ui-gmap-google-map center="center" zoom="zoom" control="control" ng-if="generatedMaps">
+      <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+            </ui-gmap-marker>
+      </ui-gmap-google-map>
+  </div>
+  <div style="width:100%;height:400px;" ng-show="appointments_page">
+    <div style="width:100%;height:33px;">
+      Pick your Date
+    </div>
+    <div style="width:100%;height:100px;">
+      <ul class="appointments-lists day">
+        <li class="appointments-list" ng-repeat="slot in AppointmentsService.slots">
+          {{slot.dayofweek}}
+        </li>
+      </ul>
+      <ul class="appointments-lists date" ng-click="AppointmentsService.current_date_selection = $index">
+        <li class="appointments-list" ng-repeat="slot in AppointmentsService.slots">
+          {{slot.dateofmonth}}
+        </li>
+      </ul>
+    </div>
+    <div style="width:100%;height:33px;">
+      Pick your Slot
+    </div>
+    <div style="width:100%;height:100px;">
+      <ul class="appointments-lists slot">
+        <li class="appointments-list slots" ng-repeat="slot in AppointmentsService.slots[AppointmentsService.current_date_selection].slots">
+          {{slot.num_slots}}
+        </li>
+      </ul>
+      <ul class="appointments-lists slotname">
+        <li class="appointments-list slotsname" ng-repeat="slot in AppointmentsService.slots[AppointmentsService.current_date_selection].slots">
+          {{slot.slot_name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,9 @@ class BlousesService {
   constructor($http) {
     this.$http = $http
     this.Categories = []
+    this.FrontSide = true
     this.NeckType = ''
+    this.showCategories = false
   }
   getCategories(){
     this.$http({
@@ -10,7 +12,9 @@ class BlousesService {
       method: 'GET'
     }).then((response)=>{
       if(response.data.status === 'success'){
-          this.Categories = response.data.data
+          this.FrontCategories = response.data.data.slice(0,5)
+          this.BackCategories = response.data.data.slice(5,10)
+          this.showCategories = true
       }else{
 
       }
@@ -18,13 +22,16 @@ class BlousesService {
 
     })
   }
-  initOptions(){
+  initOptions(neck_type){
+    this.NeckType = neck_type
     this.$http({
-      url : `/api/blouse/init?neck_type=${this.NeckType}`,
+      url : `/api/blouse/init?neck_type=${neck_type}`,
       method: 'GEt'
     }).then((response)=>{
       if(response.data.status === 'success'){
           this.BlouseOptions = response.data.data
+          this.NeckType = this.BlouseOptions.neck_type
+          this.showCategories = false
           localStorage.blouseHash = this.BlouseOptions.hash
       }else{
 
@@ -40,6 +47,8 @@ class BlousesService {
     }).then((response)=>{
       if(response.data.status === 'success'){
           this.BlouseOptions = response.data.data
+          this.NeckType = this.BlouseOptions.neck_type
+          this.showCategories = false
       }else{
 
       }
@@ -59,10 +68,15 @@ class BlousesService {
       }
     }).then((response)=>{
       if(response.data.status === 'success'){
-
+        _.each(this.BlouseOptions[category.toLowerCase()], (item)=>{
+          item.selected = false
+          if(item.name === name){
+            item.selected = true
+          }
+        })
       }
     },(error)=>{
-      
+
     })
   }
 }

@@ -4,6 +4,7 @@ import (
   "github.com/gin-gonic/gin"
 )
 type blouseOptions struct{
+    Key string `json:"key"`
     Name string `json:"name"`
     Category string `json:"category"`
     Type string `json:"type"`
@@ -24,6 +25,7 @@ type AddOns struct{
 }
 type initBlouseData struct{
   Hash string `json:"hash"`
+  NeckType string `json:"neck_type"`
   TotalPrice float64 `json:"total_price"`
   Favorites bool `json:"favorites"`
   Gender string `json:"gender"`

@@ -19,6 +19,7 @@ func fetchBlouseOptionsFromKey(hash, option_key, option_category, option_type st
       if key == option_key{
         b.Selected = true
       }
+      b.Key = key
       b.Enabled = true
       list := getDisableList(hash)
       disable_list := strings.Split(list, ",")
@@ -49,6 +50,7 @@ func fetchBlouseOptions(hash, option_category, option_type string) []blouseOptio
       if key1 == key2{
         b.Selected = true
       }
+      b.Key = key1
       b.Enabled = true
       list := getDisableList(hash)
       disable_list := strings.Split(list, ",")
