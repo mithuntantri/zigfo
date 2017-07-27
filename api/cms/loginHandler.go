@@ -13,6 +13,7 @@ func loginHandler(c *gin.Context)  {
     Password string `json:"password"`
     OtpLogin  bool  `json:"otp_login"`
     ResendOtp bool `json:"resend_otp"`
+    OTPOnCall bool `json:"otponcall"`
     Otp string `json:"otp"`
     FBLogin bool  `json:"fb_login"`
   }
@@ -67,7 +68,7 @@ func loginHandler(c *gin.Context)  {
     }else if credentialsExist && request.OtpLogin && request.Otp == ""{
       //Generate Otp for mobileno or resend otp
         if request.ResendOtp{
-          blocked := callresOTP(request.ID, "r")
+          blocked := callresOTP(request.ID, "r", request.OTPOnCall)
           c.JSON(200, gin.H{
             "status" : "success",
             "message" : "",

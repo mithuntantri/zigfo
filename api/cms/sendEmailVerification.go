@@ -157,7 +157,7 @@ func sendEmailVerification(mobileno, client_id, email_id string)  {
 
     </html>
   `)
-  d := gomail.NewPlainDialer("smtp.zoho.com", 587, "noreply@zigfo.com", "password123")
+  d := gomail.NewPlainDialer("smtp.zoho.com", 587, "noreply@zigfo.com", "CWSEZhqnL2gL")
   d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
     if err := d.DialAndSend(mail); err != nil {
         panic(err)

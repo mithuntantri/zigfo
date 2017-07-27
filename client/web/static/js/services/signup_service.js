@@ -116,6 +116,24 @@ class SignupService {
 
     })
   }
+  resend_signup(mobileno, otponcall){
+    this.$http({
+      url : '/api/signup/resend',
+      method: 'POST',
+      data: {
+        'mobileno': mobileno,
+        'otponcall' : otponcall
+      }
+    }).then((response)=>{
+      if(response.data.status === 'success'){
+        console.log('coming here');
+      }else{
+        this.ErrorField = response.data.message
+      }
+    }, (error)=>{
+
+    })
+  }
   create_user_password(mobileno, password){
     this.$http({
       url: '/api/setpassword',

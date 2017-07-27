@@ -13,13 +13,13 @@
     background-color: #fff;
     box-shadow: 0 2px 15px rgba(0,0,0,.1);
     padding: 20px 10px;
-    max-width: 430px;
+    max-width: 830px;
     margin: auto;
 }
 @media (min-width: 400px){
   .register-box {
       display: inline-block;
-      width: 400px;
+      width: 800px;
   }
   .ui-view-container,
   .zig-shop-base{
@@ -123,6 +123,9 @@ legend {
 .register-gender-title {
     display: inline;
     font-weight: 600;
+    float: left;
+    margin-right: 15px;
+    line-height: 23px;
 }
 .register-gender-radio {
     margin-left: 15px;
@@ -137,6 +140,7 @@ legend {
     font-weight: 600;
     color: #696e79;
     font-size: 12px !important;
+    margin-right: 10px;
 }
 input{
   margin: 0 !important;

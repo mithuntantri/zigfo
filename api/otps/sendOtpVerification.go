@@ -4,20 +4,12 @@ import (
   "fmt"
   "crypto/tls"
   "gopkg.in/gomail.v2"
-  "net/http"
 )
 
 func sendOtpThroughSms(firstname, mobileno, otp string) {
   fmt.Println("Sending OTP SMS")
-  senderid := "ZIGFOT"
-  country_code := "91"
-  route_id := "4"
-  message := `Hi `+firstname+`, `+otp+` is your OTP for verification. Do not share this OTP to anyone for security reasons. This OTP is valid for only 10 minutes.`
-  resp, err := http.Get(`https:///control.msg91.com/api/sendhttp.php?authkey=` + sms_auth_key + `&mobiles=`+ mobileno +`&message=`+ message +`&sender=`+ senderid +`&route=` + route_id + `&country=` + country_code)
-  if err != nil{
-    checkErr(err)
-  }
-  defer resp.Body.Close()
+  message := `Hi `+firstname+`, Welcome to ZIGFO. Your OTP for verification is `+otp+`. This OTP is valid for only 10 minutes.`
+  requestOTP(message, otp, mobileno)
 }
 
 func sendOtpThroughMail(email_id, otp string)  {
@@ -36,6 +28,26 @@ func sendOtpThroughMail(email_id, otp string)  {
       <title></title>
     </head>
 
+    <styles>
+      .downloadApp3Icon{
+        width: 130px;
+        height: 41px;
+        vertical-align: top;
+        background-position: 0px -196px;
+      }
+      .downloadApp1Icon {
+          width: 130px;
+          height: 41px;
+          vertical-align: top;
+          background-position: 0px -153px;
+      }
+      .footerIcon {
+          background-image: url(https://zigfo.com/img/allicons.png);
+          display: inline-block;
+          vertical-align: middle;
+      }
+    </styles>
+
     <body style="font-family:-apple-system, '.SFNSText-Regular', 'Helvetica Neue', Roboto, 'Segoe UI', sans-serif; color: #666666; background:white; text-decoration: none;">
       <table width="100%" cellpadding="0" cellspacing="0" border="0" summary="">
         <tr align="center">
@@ -47,7 +59,7 @@ func sendOtpThroughMail(email_id, otp string)  {
               <tr align="center">
                 <td valign="middle" style="width: 100%;">
                   <a href="https://www.zigfo.com">
-                    <img width="55" height="71" style="border:0;width:55px;height:71px;" src="http://www.zigfo.com/img/mail-logo.png" alt="zigfo">
+                    <img width="55" height="71" style="border:0;width:55px;height:71px;" src="https://www.zigfo.com/img/zigfo_logo.png" alt="zigfo">
                   </a>
                 </td>
               </tr>
@@ -95,12 +107,10 @@ func sendOtpThroughMail(email_id, otp string)  {
               <tr align="center">
                 <td style="width: 100%;">
                   <a href="https://itunes.apple.com/app/zigfo-social-bookmarks/id1056141950" style="text-decoration:none;">
-                    <img width="135" height="40" style="border: 0; width: 135px; height: 40px; margin-left: 0px; margin-right: 3px;" src="http://www.zigfo.com/img/apple-app-store.png" alt="iOS app"
-                      title="iOS app">
+                    <img class="footerIcon downloadApp1Icon" alt="iOS app" title="iOS app"/>
                   </a>
                   <a href="https://play.google.com/store/apps/details?id=com.zigfo.android" style="text-decoration:none;">
-                    <img width="135" height="40" style="border: 0; width: 135px; height: 40px; margin-left: 3px; margin-right: 0px;" src="http://www.zigfo.com/img/google-play-store.png" alt="Android app"
-                      title="Android app">
+                    <img class="footerIcon downloadApp3Icon" alt="iOS app" title="iOS app"/>
                   </a>
                 </td>
               </tr>
@@ -114,13 +124,13 @@ func sendOtpThroughMail(email_id, otp string)  {
                   </p>
                   <p style="font-size: 9pt; color: #b3b3b3;">
                     <a href="https://itunes.apple.com/app/zigfo" style="text-decoration:none;">
-                      <img width="20" height="20" style="border: 0; width: 18px; height: 18px; margin-right:6px;" src="http://www.zigfo.com/img/apple.png" alt="iOS app" title="iOS app">
+                      <img width="20" height="20" style="border: 0; width: 18px; height: 18px; margin-right:6px;" src="https://www.zigfo.com/img/apple.png" alt="iOS app" title="iOS app">
                     </a>
                     <a href="https://twitter.com/zigfocom" style="text-decoration:none;">
-                      <img width="20" height="20" style="border: 0; width: 18px; height: 18px; margin-right:6px;" src="http://www.zigfo.com/img/twitter.png" alt="Twitter" title="Twitter">
+                      <img width="20" height="20" style="border: 0; width: 18px; height: 18px; margin-right:6px;" src="https://www.zigfo.com/img/twitter.png" alt="Twitter" title="Twitter">
                     </a>
                     <a href="https://www.facebook.com/zigfocom" style="text-decoration:none;">
-                      <img width="18" height="18" style="border: 0; width: 18px; height: 18px;" src="/http://www.zigfo.com/img/facebook.png" alt="Facebook" title="Facebook">
+                      <img width="18" height="18" style="border: 0; width: 18px; height: 18px;" src="https://www.zigfo.com/img/facebook.png" alt="Facebook" title="Facebook">
                     </a>
                   </p>
                 </td>
@@ -136,7 +146,7 @@ func sendOtpThroughMail(email_id, otp string)  {
 
     </html>
   `)
-  d := gomail.NewPlainDialer("smtp.zoho.com", 587, "noreply@zigfo.com", "password123")
+  d := gomail.NewPlainDialer("smtp.zoho.com", 587, "noreply@zigfo.com", "CWSEZhqnL2gL")
   d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
     if err := d.DialAndSend(mail); err != nil {
         panic(err)

@@ -1,52 +1,52 @@
 <div class="register-container">
-  <div class="register-box">
-    <div style="font-size:26px;color:#535766;text-align:center;font-weight:300;line-height:37px;margin-top:15px;margin-bottom:32px;">Login to</div>
-    <div style="font-size:12px;color:#535766;text-align:center;font-weight:300;line-height:14px;margin-bottom:20px;">EASILY USING</div>
-    <div style="width:100%;margin-top:10px;margin-bottom:40px;height:50px;">
-      <div class="register-button" ng-click="fbLogin()"><span class="register-fb-logo"></span>FACEBOOK</div>
-      <div class="register-button" g-login><span class="register-google-logo"></span>GOOGLE</div>
-      <!-- <google-plus-signin clientid="{{google_client_id}}" style="margin-left:10px;margin-top:7px;"></google-plus-signin> -->
+  <div class="register-box" style="max-width:430px;">
+      <div style="font-size:26px;color:#535766;text-align:center;font-weight:300;line-height:37px;margin-top:15px;margin-bottom:32px;">Login to</div>
+      <div style="font-size:12px;color:#535766;text-align:center;font-weight:300;line-height:14px;margin-bottom:20px;">EASILY USING</div>
+      <div style="width:100%;margin-top:10px;margin-bottom:40px;height:50px;">
+        <div class="register-button" ng-click="fbLogin()"><span class="register-fb-logo"></span>FACEBOOK</div>
+        <div class="register-button" g-login><span class="register-google-logo"></span>GOOGLE</div>
+        <!-- <google-plus-signin clientid="{{google_client_id}}" style="margin-left:10px;margin-top:7px;"></google-plus-signin> -->
+      </div>
+      <div style="font-size:12px;color:#535766;text-align:center;font-weight:300;line-height:14px;margin-bottom:20px;">- OR USING EMAIL/MOBILENO -</div>
+      <form class="register-form">
+        <fieldset class="register-input-container">
+          <div class="register-input-item"ng-show="!LoginService.OtpGenerated">
+            <input type="text" class="register-user-input register-user-input-email" placeholder="Your Email Address / Mobile" name="userid" ng-model="userid" autocomplete="off"/>
+          </div>
+          <div class="register-input-item" ng-show="LoginService.OtpGenerated">
+            <input type="number" class="register-user-input register-user-input-email" placeholder="OTP sent to Mobile Number" name="otp" ng-model="otp" autocomplete="off"/>
+          </div>
+          <div class="register-input-item" ng-hide="loginwithotp">
+            <input type="password" class="register-user-input register-user-input-password" placeholder="Your Password" name="password" ng-model="password"
+            style="border-bottom-left-radius:5px;border-bottom-right-radius:5px;" autocomplete="off"/>
+          </div>
+        </fieldset>
+        <div class="register-link-container" ng-if="LoginService.ErrorField" style="text-align:left;color:rgb(241, 55, 81) !important;">
+          <div class="register-link" style="text-align:left;color:rgb(241, 55, 81) !important;">
+            <span class="register-info-text">{{LoginService.ErrorField}}</span>
+          </div>
+        </div>
+        <fieldset class="register-button-container" ng-if="!loginwithotp" ng-click="secureLogin()">
+          <button class="register-button-new">LOGIN</button>
+        </fieldset>
+        <fieldset class="register-button-container" ng-if="loginwithotp && !LoginService.OtpGenerated" ng-click="secureLoginwithOtp()">
+          <button class="register-button-new">GET OTP</button>
+        </fieldset>
+        <fieldset class="register-button-container" ng-if="loginwithotp && LoginService.OtpGenerated" ng-click="verifyLoginwithOtp()">
+          <button class="register-button-new">VERIFY OTP</button>
+        </fieldset>
+        <div class="register-link-container">
+          <div class="register-link" style="width:40%;float:left;text-align:left;" ng-show="!loginwithotp">
+            <a class="register-create-account-link register-link" ng-click="loginwithotp = true">Login with OTP</a>
+          </div>
+          <div class="register-link" style="width:40%;float:left;text-align:left;" ng-show="loginwithotp">
+            <a class="register-create-account-link register-link" ng-click="loginwithotp = false">Login with Password</a>
+          </div>
+          <div class="register-link" style="width:60%;float:left;text-align:right;">
+            <span class="register-info-text">New to Zigfo?</span>
+            <a class="register-create-account-link register-link" ui-sref="main.signup">Create Account</a>
+          </div>
+        </div>
+      </form>
     </div>
-    <div style="font-size:12px;color:#535766;text-align:center;font-weight:300;line-height:14px;margin-bottom:20px;">- OR USING EMAIL/MOBILENO -</div>
-    <form class="register-form">
-      <fieldset class="register-input-container">
-        <div class="register-input-item"ng-show="!LoginService.OtpGenerated">
-          <input type="text" class="register-user-input register-user-input-email" placeholder="Your Email Address / Mobile" name="userid" ng-model="userid" autocomplete="off"/>
-        </div>
-        <div class="register-input-item" ng-show="LoginService.OtpGenerated">
-          <input type="number" class="register-user-input register-user-input-email" placeholder="OTP sent to Mobile Number" name="otp" ng-model="otp" autocomplete="off"/>
-        </div>
-        <div class="register-input-item" ng-hide="loginwithotp">
-          <input type="password" class="register-user-input register-user-input-password" placeholder="Your Password" name="password" ng-model="password"
-          style="border-bottom-left-radius:5px;border-bottom-right-radius:5px;" autocomplete="off"/>
-        </div>
-      </fieldset>
-      <div class="register-link-container" ng-if="LoginService.ErrorField" style="text-align:left;color:rgb(241, 55, 81) !important;">
-        <div class="register-link" style="text-align:left;color:rgb(241, 55, 81) !important;">
-          <span class="register-info-text">{{LoginService.ErrorField}}</span>
-        </div>
-      </div>
-      <fieldset class="register-button-container" ng-if="!loginwithotp" ng-click="secureLogin()">
-        <button class="register-button-new">LOGIN</button>
-      </fieldset>
-      <fieldset class="register-button-container" ng-if="loginwithotp && !LoginService.OtpGenerated" ng-click="secureLoginwithOtp()">
-        <button class="register-button-new">GET OTP</button>
-      </fieldset>
-      <fieldset class="register-button-container" ng-if="loginwithotp && LoginService.OtpGenerated" ng-click="verifyLoginwithOtp()">
-        <button class="register-button-new">VERIFY OTP</button>
-      </fieldset>
-      <div class="register-link-container">
-        <div class="register-link" style="width:40%;float:left;text-align:left;" ng-show="!loginwithotp">
-          <a class="register-create-account-link register-link" ng-click="loginwithotp = true">Login with OTP</a>
-        </div>
-        <div class="register-link" style="width:40%;float:left;text-align:left;" ng-show="loginwithotp">
-          <a class="register-create-account-link register-link" ng-click="loginwithotp = false">Login with Password</a>
-        </div>
-        <div class="register-link" style="width:60%;float:left;text-align:right;">
-          <span class="register-info-text">New to Zigfo?</span>
-          <a class="register-create-account-link register-link" ui-sref="main.signup">Create Account</a>
-        </div>
-      </div>
-    </form>
-  </div>
 </div>

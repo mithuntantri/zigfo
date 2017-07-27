@@ -21,3 +21,21 @@ input[type="reset"][disabled], input[type="submit"][disabled], html input[type="
     border-radius: 5px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after{
+  background-color: #ff527b !important;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after{
+  border: 2px solid #ff527b !important;
+}
+
+input[type="reset"][disabled], input[type="submit"][disabled], html input[type="button"][disabled], button[disabled]{
+  background-color: #ff527b !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label{
+  padding-left: 30px;
+}

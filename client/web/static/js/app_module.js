@@ -1,5 +1,4 @@
-angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 'slick', 'gm',
-'uiGmapgoogle-maps', 'directive.g+signin', 'socialLogin'])
+angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 'slick', 'directive.g+signin', 'socialLogin'])
 .run(['$rootScope', '$state', '$stateParams', '$timeout', "TabsService", '$window',
     function($rootScope, $state, $stateParams, $timeout, TabsService, $window) {
     (function(){
@@ -105,19 +104,19 @@ angular.module("zigfo", ['ui.router', 'satellizer', 'ngMaterial', 'ngFacebook', 
         })
 
         .state("main.login", {
-          url: "login",
+          url: "",
           templateUrl: "partials/main.login.html",
           controller: "mainLoginController"
         })
 
         .state("main.cart", {
-          url: "cart",
+          url: "",
           templateUrl: "partials/main.cart.html",
           controller: "mainLoginController"
         })
 
         .state("main.signup", {
-          url: "signup",
+          url: "",
           templateUrl: "partials/main.signup.html",
           controller: "mainSignupController"
         })

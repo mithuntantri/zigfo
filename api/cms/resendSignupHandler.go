@@ -6,11 +6,12 @@ import (
 func resendSignupHandler(c *gin.Context)  {
   var request struct {
     Mobileno string `json:"mobileno"`
+    OTPOnCall bool `json:"otponcall"`
   }
   if c.Bind(&request) == nil {
     registered, blocked, verified := checkRegistrationExists(request.Mobileno)
     if registered && !blocked{
-      blocked := callresOTP(request.Mobileno, "r")
+      blocked := callresOTP(request.Mobileno, "r", request.OTPOnCall)
       updateRegistrations(request.Mobileno, blocked, false)
       c.JSON(200, gin.H{
         "status" : "success",

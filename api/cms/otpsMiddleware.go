@@ -57,11 +57,12 @@ func callverOTP(mobileno, otp, reqType string) (bool,bool){
   json.Unmarshal([]byte(string(body)), &response)
   return response.Blocked, response.Verified
 }
-func callresOTP(mobileno, reqType string) (bool){
+func callresOTP(mobileno, reqType string, otponcall bool) (bool){
   url := "http://127.0.0.1:2000/otp/resend"
-  request := fmt.Sprintf("{\"mobileno\":\"%s\", \"request_type\":\"%s\"}",
-      mobileno, reqType)
-
+  fmt.Println(mobileno, reqType, otponcall)
+  request := fmt.Sprintf("{\"mobileno\":\"%s\", \"request_type\":\"%s\", \"otponcall\":%t}",
+      mobileno, reqType, otponcall)
+  fmt.Println(request)
   req, err := http.NewRequest("POST", url, bytes.NewBuffer([]byte(request)))
   req.Header.Set("Content-Type", "application/json")
 

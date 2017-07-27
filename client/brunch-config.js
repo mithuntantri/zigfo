@@ -78,7 +78,7 @@ exports.config={
 	},
 
 	paths: {
-		watched: ['web/static', 'web/assets'],
+		watched: ['web/static', 'web/assets', 'bower_components'],
 		public: "public"
 	},
 

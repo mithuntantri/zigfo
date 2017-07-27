@@ -10,7 +10,7 @@ import (
 var db *sql.DB
 
 func connectPSQL() {
-    db, _ = sql.Open("postgres", "user=postgres dbname=mithun sslmode=disable password=postgres")
+    db, _ = sql.Open("postgres", "user=postgres dbname=zigfo sslmode=disable password=zigfo123")
 }
 
 func QuoteIdentifier(name string) string {

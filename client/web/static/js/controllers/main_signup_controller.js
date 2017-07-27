@@ -36,6 +36,12 @@ angular.module("zigfo").controller('mainSignupController',
                     $scope.verifyOtp = ()=>{
                       SignupService.verify_signup($scope.mobileno.toString(), $scope.otp.toString())
                     }
+                    $scope.resendOtp = ()=>{
+                      SignupService.resend_signup($scope.mobileno.toString(), false)
+                    }
+                    $scope.onCallOtp = ()=>{
+                      SignupService.resend_signup($scope.mobileno.toString(), true)
+                    }
                     $scope.fbLogin = ()=>{
                        FBLoginService.fblogin()
                      }
